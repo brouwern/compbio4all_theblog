@@ -18,3 +18,6 @@ distill::create_post(
   draft = FALSE, 
   edit = interactive()
 )
+
+
+# https://rstudio.github.io/distill/blog_workflow.html

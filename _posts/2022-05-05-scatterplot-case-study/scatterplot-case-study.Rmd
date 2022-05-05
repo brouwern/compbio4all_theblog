@@ -4,6 +4,9 @@ description: |
   A short description of the post.
 author: Nathan L. Brouwer
 date: 2022-05-05
+categories:
+  - base R
+  - scatterplots
 output:
   distill::distill_article:
     self_contained: false

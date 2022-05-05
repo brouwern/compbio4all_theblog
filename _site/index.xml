@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Computational Biology for All!</title>
+    <link>https://compbio4all.netlify.app/</link>
+    <atom:link href="https://compbio4all.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
+    <description>Computational Biology for All!
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 05 May 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>I really do like base R plotting</title>
+      <dc:creator>Nathan Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-05-i-really-do-like-base-r-plotting</link>
+      <description>A short description of the post.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-05-i-really-do-like-base-r-plotting</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-i-really-do-like-base-r-plotting/i-really-do-like-base-r-plotting_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Old-school error bars in base R using Hmisc::errbar()</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-05-old-school-error-bars-in-base-r-using-hmiscerrbar</link>
+      <description>A short description of the post.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-05-old-school-error-bars-in-base-r-using-hmiscerrbar</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-old-school-error-bars-in-base-r-using-hmiscerrbar/old-school-error-bars-in-base-r-using-hmiscerrbar_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Overlaying a barplot with a line graph in base R</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-05-overlaying-a-barplot-with-a-line-graph-in-base-r</link>
+      <description>A short description of the post.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-05-overlaying-a-barplot-with-a-line-graph-in-base-r</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-overlaying-a-barplot-with-a-line-graph-in-base-r/overlaying-a-barplot-with-a-line-graph-in-base-r_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Scatterplot case study: Ecological succession in Mexico</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico</link>
+      <description>A short description of the post.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico/scatterplot-case-study-ecological-succession-in-mexico_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Scatterplot case study</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-case-study</link>
+      <description>A short description of the post.</description>
+      <category>base R</category>
+      <category>scatterplots</category>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-case-study</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-case-study/scatterplot-case-study_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Scatterplot in R with annotation using segments()</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-in-r-with-annotation-using-segments</link>
+      <description>A short description of the post.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-in-r-with-annotation-using-segments</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-scatterplot-in-r-with-annotation-using-segments/scatterplot-in-r-with-annotation-using-segments_files/figure-html5/unnamed-chunk-1-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Welcome to Computational Biology for All!</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/welcome</link>
+      <description>Welcome to our new blog, Computational Biology for All!. We hope you enjoy 
+reading what we have to say!</description>
+      <guid>https://compbio4all.netlify.app/posts/welcome</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
