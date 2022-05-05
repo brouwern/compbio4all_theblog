@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About Computational Biology for All!",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\nWelcome to Computational Biology for All! I’m Nathan Brouwer, a biology lecturer at the University of Pittsburgh Department of Biological Science.\n\n\n\n",
+      "last_modified": "2022-05-05T11:41:54-04:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Computational Biology for All!",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-05-05T11:41:54-04:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

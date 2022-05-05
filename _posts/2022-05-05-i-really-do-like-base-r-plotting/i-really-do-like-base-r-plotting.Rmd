@@ -1,0 +1,48 @@
+---
+title: "I really do like base R plotting"
+description: |
+  A short description of the post.
+author:
+  - name: Nathan Brouwer
+    url: https://example.com/norajones
+date: 2022-05-05
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+I have to admit, I really do like building plots with classic, base R functions.
+
+First, you don't have to build a dataframe, but it inot tidy format, or whatever.  Make some vectors and BAM!  You're done.
+
+Here's some data from a classic study of deer in the George Reserve in Michigan.
+
+Type it in and done.
+```{r}
+year <- c(1928,NA,NA,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946)
+deer <- c(6,NA,NA,150,114,109,151,69,85,75,73,49,57,56,51,55)
+fawns<- c(NA,154,NA,60,14,83,18,49,30,44,27,51,32,25,26,19)
+```
+
+```{r}
+
+
+par(mfrow = c(1,2), mar = c(3,4,1,1))
+plot(na.omit(deer) ~ na.omit(year), type = "b", pch = 15, lty =3,
+     xlab = "", ylab = "Population size", main = "Panel A")
+mtext("Year",side = 1, line = 2)
+points(deer ~ year, type = "l")
+plot(fawns/deer ~ deer, xlab = "", 
+     ylab = "Fecundity (F)",
+     pch = 16, cex = 1.25, main = "Panel B")
+mtext("Total number of deer",side = 1, line = 2)
+abline(lm(fawns/deer ~ deer), lwd = 2, lty = 2)
+```
+
+

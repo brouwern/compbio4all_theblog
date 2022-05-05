@@ -1,0 +1,26 @@
+---
+title: "Welcome to Computational Biology for All!"
+description: |
+  Welcome to our new blog, Computational Biology for All!. We hope you enjoy 
+  reading what we have to say!
+author:
+  - name: Nathan L. Brouwer 
+    url: https://example.com/norajones
+    affiliation: University of Pittsburgh
+    affiliation_url: https://www.biology.pitt.edu/
+date: 05-05-2022
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating blogs with Distill at:
+# https://rstudio.github.io/distill/blog.html
+
+```
+
+
+

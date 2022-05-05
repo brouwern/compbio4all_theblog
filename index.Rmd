@@ -1,0 +1,5 @@
+---
+title: "Computational Biology for All!"
+site: distill::distill_website
+listing: posts
+---

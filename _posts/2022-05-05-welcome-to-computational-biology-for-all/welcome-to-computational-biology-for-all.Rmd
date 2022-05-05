@@ -1,0 +1,21 @@
+---
+title: "Hello to Computational Biology for All!"
+description: |
+  A short description of the post.
+author:
+  - name: Nathan Brouwer
+    url: https://example.com/norajones
+date: 2022-05-05
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+This is the text of the blog.
+
+

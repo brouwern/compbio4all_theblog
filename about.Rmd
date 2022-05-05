@@ -1,0 +1,12 @@
+---
+title: "About Computational Biology for All!"
+description: |
+  Some additional details about the blog
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+Welcome to Computational Biology for All!  I'm Nathan Brouwer, a biology lecturer at the University of [Pittsburgh Department of Biological Science](https://www.biology.pitt.edu/).
