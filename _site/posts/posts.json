@@ -22,7 +22,7 @@
     "description": "Welcome to our new blog, Computational Biology for All!. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
+        "name": "Nathan L. Brouwer",
         "url": "https://example.com/norajones"
       }
     ],
@@ -30,7 +30,24 @@
     "categories": [],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-05-05T11:23:42-04:00",
-    "input_file": {}
+    "last_modified": "2022-05-05T13:18:46-04:00",
+    "input_file": "welcome.knit.md"
+  },
+  {
+    "path": "posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico/",
+    "title": "Scatterplot case study: Ecological succession in Mexico",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-05",
+    "categories": [],
+    "contents": "\nData were extracted from Figure 2a of Lebrija-Trejos et al. (2008) using metaDigitise.\n\n(Intercept)        Year \n 17.2543498   0.8344402 \n\n\nReferences\nLebrija-Trejos et al. Successional Change and Resilience of a Very Dry Tropical Deciduous Forest Following Shifting Agriculture. Biotropica 40: 422–431. 10.1111/j.1744-7429.2008.00398.x.\n\n\n\n",
+    "preview": "posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico/scatterplot-case-study-ecological-succession-in-mexico_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-05-05T13:44:45-04:00",
+    "input_file": "scatterplot-case-study-ecological-succession-in-mexico.knit.md"
   }
 ]

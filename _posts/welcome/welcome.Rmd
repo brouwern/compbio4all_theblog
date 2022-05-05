@@ -4,8 +4,8 @@ description: |
   Welcome to our new blog, Computational Biology for All!. We hope you enjoy 
   reading what we have to say!
 author:
-  - name: Nathan L. Brouwer 
-    url: https://example.com/norajones
+  - name: Nathan L. Brouwer
+    url: https://www.linkedin.com/in/nathan-brouwer-phd-97100980/
     affiliation: University of Pittsburgh
     affiliation_url: https://www.biology.pitt.edu/
 date: 05-05-2022
@@ -23,4 +23,11 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+Welcome to "Computational Biology for All."  This blog is dedicated to introducing quantitative methods to biologists.  Topics will include:
+
+* computational biology
+* bioinformatics
+* phylogenetics
+* data science
+* statistical analysis
 
