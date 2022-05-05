@@ -17,6 +17,40 @@
     "input_file": {}
   },
   {
+    "path": "posts/2022-05-05-old-school-error-bars-in-base-r-using-hmiscerrbar/",
+    "title": "Old-school error bars in base R using Hmisc::errbar()",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-05",
+    "categories": [],
+    "contents": "\nData taken from Table 1 of Barnes et al. 1994.\n\n\n\nReferences\nBarnes, Barnes and Kapela. 1994. The long-term impact of elephant browsing on baobab trees at Msembe, Ruaha National Park, Tanzania. African Journal of Ecology 32: 177-184 https://doi.org/10.1111/j.1365-2028.1994.tb00569.x\n\n\n\n",
+    "preview": "posts/2022-05-05-old-school-error-bars-in-base-r-using-hmiscerrbar/old-school-error-bars-in-base-r-using-hmiscerrbar_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-05-05T14:11:47-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2022-05-05-overlaying-a-barplot-with-a-line-graph-in-base-r/",
+    "title": "Overlaying a barplot with a line graph in base R",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-05",
+    "categories": [],
+    "contents": "\nData extracted from Figure 4 of Foley and Faust (2010) using metaDigitise.\n[Foley and Faust 2010](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF. Rapid population growth in an elephant Loxodonta africana population recovering from poaching in Tarangire National Park, Tanzania. Oryx 44:205 - 212. https://doi.org/10.1017/S0030605309990706\n“Poaching virtually ceased in the Park following the 1989 ivory ban and during the study there were no known poaching incidents in the northern subpopulation.”\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "preview": "posts/2022-05-05-overlaying-a-barplot-with-a-line-graph-in-base-r/overlaying-a-barplot-with-a-line-graph-in-base-r_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-05-05T14:12:03-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico/",
     "title": "Scatterplot case study: Ecological succession in Mexico",
     "description": "A short description of the post.",
@@ -31,6 +65,40 @@
     "contents": "\nData were extracted from Figure 2a of Lebrija-Trejos et al. (2008) using metaDigitise.\n\n(Intercept)        Year \n 17.2543498   0.8344402 \n\n\nReferences\nLebrija-Trejos et al. Successional Change and Resilience of a Very Dry Tropical Deciduous Forest Following Shifting Agriculture. Biotropica 40: 422–431. 10.1111/j.1744-7429.2008.00398.x.\n\n\n\n",
     "preview": "posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico/scatterplot-case-study-ecological-succession-in-mexico_files/figure-html5/unnamed-chunk-1-1.png",
     "last_modified": "2022-05-05T13:44:46-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2022-05-05-scatterplot-case-study/",
+    "title": "Scatterplot case study",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-05",
+    "categories": [],
+    "contents": "\nData were taken from Table 3 of Keeping et al 2018.\nKeeping et al 2018. Can trackers count free-ranging wildlife as effectively and efficiently as conventional aerial survey and distance sampling? Implications for citizen science in the Kalahari, Botswana. Biological Conservation 223: 156-169. https://doi.org/10.1016/j.biocon.2018.04.027\n\n\n(Intercept)     D.track \n -0.1496743   1.7432001 \n\n\n\n\n",
+    "preview": "posts/2022-05-05-scatterplot-case-study/scatterplot-case-study_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-05-05T14:11:37-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2022-05-05-scatterplot-in-r-with-annotation-using-segments/",
+    "title": "Scatterplot in R with annotation using segments()",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-05",
+    "categories": [],
+    "contents": "\nData taken from Whitehouse et al (2001).\nTable 1: Adult elephant population size. Figure 1: Counts of calves\nWhitehouse, Hall-Marting and Knight. 2001. A comparison of methods used to count the elephant population of the Addo Elephant National Park, South Africa. African Journal of Ecology 39: 14-145. https://doi.org/10.1046/j.1365-2028.2000.00285.x\n\n\n\n\n\n[1] 0.9913302\n[1] 0.9913302\n (Intercept) N.tot.aerial \n -0.07386045   1.07630414 \n\n\n\n\n\n\n[1] 0.7064592\n  (Intercept) N.calf.aerial \n    7.0917197     0.8878981 \n\n\n\n\n",
+    "preview": "posts/2022-05-05-scatterplot-in-r-with-annotation-using-segments/scatterplot-in-r-with-annotation-using-segments_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2022-05-05T14:11:21-04:00",
     "input_file": {}
   },
   {

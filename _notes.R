@@ -11,7 +11,7 @@ rmarkdown::render_site(encoding = 'UTF-8')
 
 # new post
 distill::create_post(
-  title = "Scatterplot case study: Ecological succession in Mexico", # mandatory
+  title = "Scatterplot case study", # mandatory
   author = "Nathan L. Brouwer",
   slug = "auto", # generates a website slug (URL)
   date_prefix = TRUE, # adds date for sorting

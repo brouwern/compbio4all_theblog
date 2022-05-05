@@ -1,0 +1,88 @@
+---
+title: "Scatterplot in R with annotation using segments()"
+description: |
+  A short description of the post.
+author: Nathan L. Brouwer
+date: 2022-05-05
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Data taken from Whitehouse et al (2001).
+
+Table 1: Adult elephant population size.
+Figure 1: Counts of calves
+
+Whitehouse, Hall-Marting and Knight.  2001.  A comparison of methods used to count the elephant population of the Addo Elephant National Park, South Africa.  African Journal of Ecology 39: 14-145.  https://doi.org/10.1046/j.1365-2028.2000.00285.x
+
+```{r}
+N.tot.aerial <- c(92,  102, 108, 116 ,120, 
+              118, 121, 135, 140, 151, 
+              162, 161, 173, 175, 183, 
+              194, 195, 193, 212, 208, 
+              209, 218, 232)
+N.tot.census<-  c( 96, 102, 108, 116, 131, 
+               138, 145, 148, 152, 163, 
+               170, 174, 185, 195, 200, 
+               202, 208, 210, 220, 221, 
+               229, 236, 251)
+Year <- 1:length(N.tot.aerial)
+plot(N.tot.census ~ Year, ylim = c(80,260), type = "b", pch = 2,
+     xlab = "Year", ylab = "Population size estimate")
+lines(N.tot.aerial ~ Year, type = "b", pch = 16)
+legend("topleft", legend = c("Complete census", "Aerial survey"),pch = c(2,16))
+
+```
+
+
+```{r}
+plot(N.tot.census ~ N.tot.aerial, xlab = "N estimated from aerial survey", ylab = "N determined - complete census")
+abline(a = 0, b = 1)
+mod <- lm(N.tot.census ~ N.tot.aerial)
+abline((mod))
+cor(N.tot.census, N.tot.aerial)
+cor(N.tot.census , N.tot.aerial)
+coef(mod)
+```
+
+```{r}
+
+
+
+year.calf <- c(1986, 1987, 1987.5, 1988, 1990, 1993, 1993.5, 1994, 1994.25, 1995, 1995.5, 1995.75, 1996, 1997)
+
+N.calf.aerial <- c( 4,  3, 2,  6, 6,   3,  3,  7,  8, 11, 10,  8,  6, 11)
+N.calf.census <- c(10, 10, 3, NA, 10, 12, 12, 13, 13, 16, 16, 17, 18, 15)
+y.lim <- range(c(N.calf.aerial, N.calf.census), na.rm = TRUE)
+plot(N.calf.census ~ year.calf, ylim = y.lim, pch = 15,
+     xlab = "Year",
+     ylab = "Calves")
+points(N.calf.aerial ~ year.calf, pch = 18, cex = 1.2)
+segments(x0 = year.calf,x1 = year.calf,y0 = N.calf.aerial, y1 = N.calf.census, lwd = 0.75)
+legend("topleft", legend = c("Complete census", "Aerial survey"),pch = c(15,18))
+
+
+
+
+
+
+```
+
+
+
+```{r}
+plot(N.calf.census ~  N.calf.aerial)
+abline(a = 0, b = 1)
+mod <- lm(N.calf.census ~ N.calf.aerial)
+cor(N.calf.aerial , N.calf.census, use = "complete.obs")
+coef(mod)
+```
+

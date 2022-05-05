@@ -1,0 +1,47 @@
+---
+title: "Old-school error bars in base R using Hmisc::errbar()"
+description: |
+  A short description of the post.
+author: Nathan L. Brouwer
+date: 2022-05-05
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Data taken from Table 1 of Barnes et al. 1994.
+
+
+```{r}
+par(mfrow = c(1,1))
+
+Baobabs <- c(51.0, 27.6, 34.6)
+CI.hi <- c(99.9, 59.5, 47.3)
+CI.lo <- c(25.8, 12.5, 24.4)
+
+# Lambda before vs. after 
+Hmisc::errbar(x = c(1976,1982,1989),   #the number of categories 
+                           #along the x axis
+       y = Baobabs, #mean values to plot
+       yplus = CI.hi,
+       type = "b",cex = 2,lwd = 2,
+       ymin = CI.lo,
+       xaxt = "n",          #xaxt removes the numberic lables
+       #xlim = c(0.75,2.25),       #set limit of axes to be +/- 0.25 the number of categories
+       xlab = "Year",   #label for x-axis
+       ylab = "Density (trees/km^2)")  
+     axis(side=1,         #1 = the bottom of graph
+     at=c(1976,1982,1989),  #where on x-axis; same as "x" in errbar
+     labels=c("1976","1982","1989"))
+  legend("topright",legend = "Error bars = 95% confidence intervals")
+```
+
+
+## References 
+
+Barnes, Barnes and Kapela.  1994.  The long-term impact of elephant browsing on baobab trees at Msembe, Ruaha National Park, Tanzania.  African Journal of Ecology 32: 177-184 https://doi.org/10.1111/j.1365-2028.1994.tb00569.x
