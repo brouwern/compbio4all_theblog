@@ -2,7 +2,7 @@
   {
     "path": "posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers/",
     "title": "Blood feud: ggplot versus base R for beginers",
-    "description": "A short description of the post.",
+    "description": "ggplot2 is powerful, but what is its cognitive load for beginners?.",
     "author": [
       {
         "name": "Nathan L. Brouwer",
@@ -10,10 +10,14 @@
       }
     ],
     "date": "2022-05-05",
-    "categories": [],
+    "categories": [
+      "ggplot2 versus R",
+      "base R",
+      "time series"
+    ],
     "contents": "\n\n\n\nThe data are on the abundance of elephants in a national park in Tanzania where poaching has dropped dramatically, and taken from Foley and Faust (2010), Table 1.\nTo plot the data in base R I need only\nThree lines of code\nOne plotting function, plot()\nOne arguement, type = “b”\n\n\n\nThe syntax I’ve used is the same y = mx+b format folks learn in high school, and moreover is the same as that used for regression in R using the lm() function.\nTo plot the data in ggplot2 I need\n7 lines of code\n6 functions, including\ndata.frame() to turn my data into a dataframe\nlibrary() to call up\naes() to set up the x vs. y relationship\n2 function to actually make the plot, geom_line() AND geom_point()\n\n\n\n\nMoreover, the syntax doesn’t elicit the geometry of the relationship. Also, in this particular case ggplot is setting the increments of the x axis to non-sensical values of 1997.5 and 2002.5.\n\n\n\n\n\n\nReferences\nFoley and Faust 2010. Rapid population growth in an elephant Loxodonta africana population recovering from poaching in Tarangire National Park, Tanzania. Oryx 44:205 - 212. https://doi.org/10.1017/S0030605309990706\n\n\n\n",
-    "preview": {},
-    "last_modified": "2022-05-06T10:09:50-04:00",
+    "preview": "posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers/Venationes_Ferarum_Avium_Piscium_BM_1957041341.jpg",
+    "last_modified": "2022-05-06T10:36:03-04:00",
     "input_file": {}
   },
   {

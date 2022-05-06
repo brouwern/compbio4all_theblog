@@ -1,6 +1,8 @@
 
 # Notes
 
+# https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/
+
 
 # render
 rmarkdown::render_site(encoding = 'UTF-8')

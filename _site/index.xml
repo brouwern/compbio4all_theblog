@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:distill="https://distill.pub/journal/" version="2.0">
   <channel>
     <title>Computational Biology for All!</title>
     <link>https://compbio4all.netlify.app/</link>
     <atom:link href="https://compbio4all.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
-    <description>Computational Biology for All!
+    <description>Computational Biology for All!  A blog for those learning &amp; teaching computational biology &amp; bioinformatics.
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Thu, 05 May 2022 00:00:00 +0000</lastBuildDate>
@@ -12,9 +12,13 @@
       <title>Blood feud: ggplot versus base R for beginers</title>
       <dc:creator>Nathan L. Brouwer</dc:creator>
       <link>https://compbio4all.netlify.app/posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers</link>
-      <description>A short description of the post.</description>
+      <description>ggplot2 is powerful, but what is its cognitive load for beginners?.</description>
+      <category>ggplot2 versus R</category>
+      <category>base R</category>
+      <category>time series</category>
       <guid>https://compbio4all.netlify.app/posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers</guid>
       <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers/Venationes_Ferarum_Avium_Piscium_BM_1957041341.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Welcome to Computational Biology for All!</title>

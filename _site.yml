@@ -1,13 +1,14 @@
 name: "compbio4all"
 title: "Computational Biology for All!"
 description: |
-  Computational Biology for All!
+  Computational Biology for All!  A blog for those learning & teaching computational biology & bioinformatics.
 output_dir: "_site"
 base_url: https://compbio4all.netlify.app/
 collections:
   posts:
     share: [twitter, linkedin]
 navbar:
+  source_url: https://github.com/brouwern/compbio4all_theblog
   right:
     - text: "Home"
       href: index.html
@@ -15,7 +16,15 @@ navbar:
       href: about.html
     - text: "Blogroll"
       href: blogroll.html
+    - icon: fa fa-rss
+      href: index.xml
+rss:
+  full_content: true
+    # categories:
+    # - portfolios
+    # - forecasting
 output: distill::distill_article
+
 
 
 
