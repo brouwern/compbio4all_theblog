@@ -1,26 +1,7 @@
 [
   {
-    "path": "posts/2022-05-05-i-really-do-like-base-r-plotting/",
-    "title": "I really do like base R plotting",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nathan Brouwer",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2022-05-05",
-    "categories": [],
-    "contents": "\nI have to admit, I really do like building plots with classic, base R functions.\nFirst, you don’t have to build a dataframe, but it inot tidy format, or whatever. Make some vectors and BAM! You’re done.\nHere’s some data from a classic study of deer in the George Reserve in Michigan.\nType it in and done.\n\n\n\n\n\n\n\n\n\n",
-    "preview": "posts/2022-05-05-i-really-do-like-base-r-plotting/i-really-do-like-base-r-plotting_files/figure-html5/unnamed-chunk-2-1.png",
-    "last_modified": "2022-05-05T11:40:57-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
-    "path": "posts/2022-05-05-old-school-error-bars-in-base-r-using-hmiscerrbar/",
-    "title": "Old-school error bars in base R using Hmisc::errbar()",
+    "path": "posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers/",
+    "title": "Blood feud: ggplot versus base R for beginers",
     "description": "A short description of the post.",
     "author": [
       {
@@ -30,91 +11,10 @@
     ],
     "date": "2022-05-05",
     "categories": [],
-    "contents": "\nData taken from Table 1 of Barnes et al. 1994.\n\n\n\nReferences\nBarnes, Barnes and Kapela. 1994. The long-term impact of elephant browsing on baobab trees at Msembe, Ruaha National Park, Tanzania. African Journal of Ecology 32: 177-184 https://doi.org/10.1111/j.1365-2028.1994.tb00569.x\n\n\n\n",
-    "preview": "posts/2022-05-05-old-school-error-bars-in-base-r-using-hmiscerrbar/old-school-error-bars-in-base-r-using-hmiscerrbar_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2022-05-05T14:11:47-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
-    "path": "posts/2022-05-05-overlaying-a-barplot-with-a-line-graph-in-base-r/",
-    "title": "Overlaying a barplot with a line graph in base R",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nathan L. Brouwer",
-        "url": {}
-      }
-    ],
-    "date": "2022-05-05",
-    "categories": [],
-    "contents": "\nData extracted from Figure 4 of Foley and Faust (2010) using metaDigitise.\n[Foley and Faust 2010](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF. Rapid population growth in an elephant Loxodonta africana population recovering from poaching in Tarangire National Park, Tanzania. Oryx 44:205 - 212. https://doi.org/10.1017/S0030605309990706\n“Poaching virtually ceased in the Park following the 1989 ivory ban and during the study there were no known poaching incidents in the northern subpopulation.”\n\n\n\n\n\n\n\n\n\n\n\n\n",
-    "preview": "posts/2022-05-05-overlaying-a-barplot-with-a-line-graph-in-base-r/overlaying-a-barplot-with-a-line-graph-in-base-r_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2022-05-05T14:12:03-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
-    "path": "posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico/",
-    "title": "Scatterplot case study: Ecological succession in Mexico",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nathan L. Brouwer",
-        "url": {}
-      }
-    ],
-    "date": "2022-05-05",
-    "categories": [],
-    "contents": "\nData were extracted from Figure 2a of Lebrija-Trejos et al. (2008) using metaDigitise.\n\n(Intercept)        Year \n 17.2543498   0.8344402 \n\n\nReferences\nLebrija-Trejos et al. Successional Change and Resilience of a Very Dry Tropical Deciduous Forest Following Shifting Agriculture. Biotropica 40: 422–431. 10.1111/j.1744-7429.2008.00398.x.\n\n\n\n",
-    "preview": "posts/2022-05-05-scatterplot-case-study-ecological-succession-in-mexico/scatterplot-case-study-ecological-succession-in-mexico_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2022-05-05T13:44:46-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
-    "path": "posts/2022-05-05-scatterplot-case-study/",
-    "title": "Scatterplot case study",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nathan L. Brouwer",
-        "url": {}
-      }
-    ],
-    "date": "2022-05-05",
-    "categories": [
-      "base R",
-      "scatterplots"
-    ],
-    "contents": "\nData were taken from Table 3 of Keeping et al 2018.\nKeeping et al 2018. Can trackers count free-ranging wildlife as effectively and efficiently as conventional aerial survey and distance sampling? Implications for citizen science in the Kalahari, Botswana. Biological Conservation 223: 156-169. https://doi.org/10.1016/j.biocon.2018.04.027\n\n\n(Intercept)     D.track \n -0.1496743   1.7432001 \n\n\n\n\n",
-    "preview": "posts/2022-05-05-scatterplot-case-study/scatterplot-case-study_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2022-05-05T14:16:52-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
-  },
-  {
-    "path": "posts/2022-05-05-scatterplot-in-r-with-annotation-using-segments/",
-    "title": "Scatterplot in R with annotation using segments()",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nathan L. Brouwer",
-        "url": {}
-      }
-    ],
-    "date": "2022-05-05",
-    "categories": [],
-    "contents": "\nData taken from Whitehouse et al (2001).\nTable 1: Adult elephant population size. Figure 1: Counts of calves\nWhitehouse, Hall-Marting and Knight. 2001. A comparison of methods used to count the elephant population of the Addo Elephant National Park, South Africa. African Journal of Ecology 39: 14-145. https://doi.org/10.1046/j.1365-2028.2000.00285.x\n\n\n\n\n\n[1] 0.9913302\n[1] 0.9913302\n (Intercept) N.tot.aerial \n -0.07386045   1.07630414 \n\n\n\n\n\n\n[1] 0.7064592\n  (Intercept) N.calf.aerial \n    7.0917197     0.8878981 \n\n\n\n\n",
-    "preview": "posts/2022-05-05-scatterplot-in-r-with-annotation-using-segments/scatterplot-in-r-with-annotation-using-segments_files/figure-html5/unnamed-chunk-1-1.png",
-    "last_modified": "2022-05-05T14:11:21-04:00",
-    "input_file": {},
-    "preview_width": 1248,
-    "preview_height": 768
+    "contents": "\n\n\n\nThe data are on the abundance of elephants in a national park in Tanzania where poaching has dropped dramatically, and taken from Foley and Faust (2010), Table 1.\nTo plot the data in base R I need only\nThree lines of code\nOne plotting function, plot()\nOne arguement, type = “b”\n\n\n\nThe syntax I’ve used is the same y = mx+b format folks learn in high school, and moreover is the same as that used for regression in R using the lm() function.\nTo plot the data in ggplot2 I need\n7 lines of code\n6 functions, including\ndata.frame() to turn my data into a dataframe\nlibrary() to call up\naes() to set up the x vs. y relationship\n2 function to actually make the plot, geom_line() AND geom_point()\n\n\n\n\nMoreover, the syntax doesn’t elicit the geometry of the relationship. Also, in this particular case ggplot is setting the increments of the x axis to non-sensical values of 1997.5 and 2002.5.\n\n\n\n\n\n\nReferences\nFoley and Faust 2010. Rapid population growth in an elephant Loxodonta africana population recovering from poaching in Tarangire National Park, Tanzania. Oryx 44:205 - 212. https://doi.org/10.1017/S0030605309990706\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-05-06T10:09:50-04:00",
+    "input_file": {}
   },
   {
     "path": "posts/welcome/",
@@ -123,14 +23,14 @@
     "author": [
       {
         "name": "Nathan L. Brouwer",
-        "url": "https://example.com/norajones"
+        "url": "https://www.linkedin.com/in/nathan-brouwer-phd-97100980/"
       }
     ],
     "date": "2022-05-05",
     "categories": [],
-    "contents": "\n\n\n\n",
+    "contents": "\nWelcome to “Computational Biology for All.” This blog is dedicated to introducing quantitative methods to biologists. Topics will include:\ncomputational biology\nbioinformatics\nphylogenetics\ndata science\nstatistical analysis\n\n\n\n",
     "preview": {},
-    "last_modified": "2022-05-05T13:18:46-04:00",
+    "last_modified": "2022-05-06T10:00:40-04:00",
     "input_file": {}
   }
 ]

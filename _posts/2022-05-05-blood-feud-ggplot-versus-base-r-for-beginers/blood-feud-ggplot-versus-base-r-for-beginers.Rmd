@@ -1,0 +1,84 @@
+---
+title: "Blood feud: ggplot versus base R for beginers"
+description: |
+  A short description of the post.
+author: Nathan L. Brouwer
+date: 2022-05-05
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, echo = F}
+knitr::include_graphics(here::here("images/Venationes_Ferarum_Avium_Piscium_BM_1957041341.jpg"))
+```
+
+
+
+The data are on the abundance of elephants in a national park in Tanzania where poaching has dropped dramatically, and taken from [Foley and Faust (2010)](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF), [Table 1](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF).
+
+
+To plot the data in base R I need only 
+
+1. Three lines of code
+1. One plotting function, plot() 
+1. One arguement, type = "b"
+
+```{r}
+Year      <- c(1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005)
+Elephants <- c(226,232,292,311,313,345,406,411,440,494,485,498)
+plot(Elephants ~ Year, type = "b")
+```
+
+The syntax I've used is the same y = mx+b format folks learn in high school, and moreover is the same as that used for regression in R using the lm() function.
+
+
+To plot the data in ggplot2 I need 
+
+1. 7 lines of code 
+1. 6 functions, including
+    + data.frame() to turn my data into a dataframe
+    + library() to call up
+    + aes() to set up the x vs. y relationship
+    + 2 function to actually make the plot, geom_line() AND geom_point()
+
+```{r}
+Year      <- c(1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005)
+Elephants <- c(226,232,292,311,313,345,406,411,440,494,485,498)
+dat <- data.frame(Year, Elephants)
+library(ggplot2)
+ggplot(aes(y = Elephants, x = Year), data = dat) +
+  geom_line() +
+  geom_point()
+
+
+```
+
+Moreover, the syntax doesn't elicit the geometry of the relationship. Also, in this particular case ggplot is setting the increments of the x axis to non-sensical values of 1997.5 and 2002.5.
+
+
+```{r}
+ggplot(aes(y = Elephants, x = Year), data = dat) +
+  geom_line(size = 2, color = 2) +
+  geom_point(size = 4, color = 3)
+
+```
+
+
+
+```{r, echo = F, eval = F}
+i.last <- length(Elephants)
+delta.N <- Elephants[-1]-Elephants[-i.last]
+```
+
+
+## References
+
+Foley and Faust 2010.  Rapid population growth in an elephant *Loxodonta africana* population recovering from poaching in Tarangire National Park, Tanzania.  Oryx 44:205 - 212.  https://doi.org/10.1017/S0030605309990706
+

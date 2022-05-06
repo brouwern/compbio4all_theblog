@@ -13,6 +13,8 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Blogroll"
+      href: blogroll.html
 output: distill::distill_article
 
 
