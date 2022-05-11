@@ -7,7 +7,23 @@
     <description>Computational Biology for All!  A blog for those learning &amp; teaching computational biology &amp; bioinformatics.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 05 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>webexercises test</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-10-webexercises-test</link>
+      <description>A short description of the post.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-10-webexercises-test</guid>
+      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A latex cheatsheet for biologists</title>
+      <dc:creator>Nathan L. Brouwer</dc:creator>
+      <link>https://compbio4all.netlify.app/posts/2022-05-07-a-latex-cheatsheet-for-biologists</link>
+      <description>A short description of the post.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-07-a-latex-cheatsheet-for-biologists</guid>
+      <pubDate>Sat, 07 May 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Blood feud: ggplot versus base R for beginers</title>
       <dc:creator>Nathan L. Brouwer</dc:creator>

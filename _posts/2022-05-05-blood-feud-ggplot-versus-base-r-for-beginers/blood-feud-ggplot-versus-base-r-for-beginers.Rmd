@@ -1,7 +1,7 @@
 ---
 title: "Blood feud: ggplot versus base R for beginers"
 description: |
-  ggplot2 is powerful, but what is its cognitive load for beginners?
+  ggplot2 is powerful, but is it appropriate for complete beginners?
 author: Nathan L. Brouwer
 date: 2022-05-05
 output:
@@ -24,6 +24,15 @@ knitr::opts_chunk$set(echo = FALSE)
 knitr::include_graphics("Venationes_Ferarum_Avium_Piscium_BM_1957041341.jpg")
 ```
 
+This fall I will be teaching an introductory Computational Biology course to about 75 students, many of whom have never written a line of code before.  We rely heavily on R, and each summer before the course I mull over whether to do our graphing in ggplot or base R.  
+
+After Python versus R, nothing seems to get R users more excited than arguing over the superiority of their preferred method.  Long-term R users will have to learn both, if for no other reason than to deal with legacy code or miscellaneous packages using base R or vice versa.  The debate gets most heated, therefore, when discussing what people new to R should learn first: which one is most intuitive, which one delivers the best long-term pay off for time spent, etc.  
+
+One thing frequently missing from these discussion - and most debates about learning to code or analyze data - is exactly what is meant by someone new to R.  There are three key dimensions to this:
+
+1. Are people new to **coding**, or just coding in R?
+1. Are people new to **data analysis**, or just data analysis in R?
+1. Are people not fully invested in the process of learning coding?
 
 
 The data are on the abundance of elephants in a national park in Tanzania where poaching has dropped dramatically, and taken from [Foley and Faust (2010)](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF), [Table 1](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF).
@@ -33,7 +42,7 @@ To plot the data in base R I need only
 
 1. Three lines of code
 1. One plotting function, plot() 
-1. One arguement, type = "b"
+1. One argument, type = "b"
 
 ```{r}
 Year      <- c(1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005)
@@ -81,6 +90,10 @@ ggplot(aes(y = Elephants, x = Year), data = dat) +
 i.last <- length(Elephants)
 delta.N <- Elephants[-1]-Elephants[-i.last]
 ```
+
+
+
+"Poaching virtually ceased in the Park following the 1989 ivory ban and during the study there were no known poaching incidents in the northern subpopulation."
 
 
 ## References

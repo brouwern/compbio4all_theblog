@@ -1,5 +1,39 @@
 [
   {
+    "path": "posts/2022-05-10-webexercises-test/",
+    "title": "webexercises test",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-10",
+    "categories": [],
+    "contents": "\nWhat is used to make the vertical lines in the plot?\n\n\n# echo = FALSE, results = 'asis'\nopts <- c(\"install.package\", \n            \"install.packages\", \n            answer = \"library\", \n            \"libraries\")\n\nq1 <- mcq(opts)\n\ncat(\"What function loads a package that is already on your computer?\", q1)\n\n\nWhat function loads a package that is already on your computer? install.packageinstall.packageslibrarylibraries\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-05-11T00:43:09-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2022-05-07-a-latex-cheatsheet-for-biologists/",
+    "title": "A latex cheatsheet for biologists",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-07",
+    "categories": [],
+    "contents": "\n\n\n\nkable\n\nsymbol\nlatex\n\n\\(\\lambda\\)\n\n\\(\\rho\\)\n\npander\n\nsymbol\nlatex\n\n\\(\\lambda\\)\n\n\\(\\rho\\)\n\n\\(\\lambda\\)\n\\[\\rho\\]\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-05-07T14:15:45-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers/",
     "title": "Blood feud: ggplot versus base R for beginers",
     "description": "ggplot2 is powerful, but what is its cognitive load for beginners?.",

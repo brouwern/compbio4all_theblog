@@ -1,0 +1,56 @@
+---
+title: "webexercises test"
+description: |
+  A short description of the post.
+author: Nathan L. Brouwer
+date: 2022-05-10
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+knitr::opts_chunk$set(echo = TRUE)
+if (!requireNamespace("webexercises")) {
+  stop("You must have the 'webexercises' package installed to knit to HTML.\n   install.packages(\"webexercises\")")
+} else {
+  library("webexercises")
+}
+
+suppressPackageStartupMessages({
+  library(webexercises)
+})
+
+knitr::knit_hooks$set(webex.hide = function(before, options, envir) {
+  if (before) {
+    if (is.character(options$webex.hide)) {
+      hide(options$webex.hide)
+    } else {
+      hide()
+    }
+  } else {
+    unhide()
+  }
+})
+
+```
+
+
+What is used to make the vertical lines in the plot?
+
+
+```{r, results = 'asis'}
+# echo = FALSE, results = 'asis'
+opts <- c("install.package", 
+            "install.packages", 
+            answer = "library", 
+            "libraries")
+
+q1 <- mcq(opts)
+
+cat("What function loads a package that is already on your computer?", q1)
+```
+
