@@ -9,4 +9,6 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-Welcome to Computational Biology for All!  I'm Nathan Brouwer, a biology lecturer at the University of [Pittsburgh Department of Biological Science](https://www.biology.pitt.edu/).
+Welcome to **Computational Biology for All**!  I'm Nathan Brouwer, a biology lecturer at the University of [Pittsburgh Department of Biological Science](https://www.biology.pitt.edu/).  I've been using for over a decade to do and teach statistical modeling, populations simulations, bioinformatics and phylogenetics.
+
+<!-- links to papers, contact information, etc -->

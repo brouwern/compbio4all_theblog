@@ -87,638 +87,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Computational Biology for All!: About Computational Biology for All!</title>
+  <title>Downloading protein and DNA sequences with the rentrez package</title>
 
-  <meta property="description" itemprop="description" content="Some additional details about the blog"/>
+  <meta property="description" itemprop="description" content="`rentrez` is a fast and easy way to access biological sequence databases."/>
 
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-05-12"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-12"/>
+  <meta name="article:author" content="Nathan L. Brouwer"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Computational Biology for All!: About Computational Biology for All!"/>
+  <meta property="og:title" content="Downloading protein and DNA sequences with the rentrez package"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Some additional details about the blog"/>
+  <meta property="og:description" content="`rentrez` is a fast and easy way to access biological sequence databases."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Computational Biology for All!"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Computational Biology for All!: About Computational Biology for All!"/>
-  <meta property="twitter:description" content="Some additional details about the blog"/>
+  <meta property="twitter:title" content="Downloading protein and DNA sequences with the rentrez package"/>
+  <meta property="twitter:description" content="`rentrez` is a fast and easy way to access biological sequence databases."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About Computational Biology for All!"]},{"type":"character","attributes":{},"value":["Some additional details about the blog"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","editor_options"]}},"value":[{"type":"character","attributes":{},"value":["Downloading protein and DNA sequences with the rentrez package"]},{"type":"character","attributes":{},"value":["`rentrez` is a fast and easy way to access biological sequence databases.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Nathan L. Brouwer"]}]}]},{"type":"character","attributes":{},"value":["2022-05-12"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["downloading-protein-and-dna-sequences-with-the-rentrez-package_files/anchor-4.2.2/anchor.min.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/bowser-1.9.3/bowser.min.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/distill-2.2.21/template.v2.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/header-attrs-2.11/header-attrs.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/jquery-3.6.0/jquery-3.6.0.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/jquery-3.6.0/jquery-3.6.0.min.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/jquery-3.6.0/jquery-3.6.0.min.map","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/popper-2.6.0/popper.min.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/tippy-6.2.7/tippy-bundle.umd.min.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/tippy-6.2.7/tippy-light-border.css","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/tippy-6.2.7/tippy.css","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/tippy-6.2.7/tippy.umd.min.js","downloading-protein-and-dna-sequences-with-the-rentrez-package_files/webcomponents-2.0.0/webcomponents.js","US-NLM-NCBI-Logo.png","US-NLM-NCBI-Logo2.png"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2037,82 +1438,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/popper-2.6.0/popper.min.js"></script>
+  <link href="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="downloading-protein-and-dna-sequences-with-the-rentrez-package_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <style type="text/css">
-  :root {
-    --pink: #983E82;   /* hsl(315, 42%, 42%) */
-    --orange: #E2A458; /* hsl( 33, 70%, 62%) */
-    --yellow: #F5DC70; /* hsl( 49, 87%, 70%) */
-    --green: #59935B;  /* hsl(122, 25%, 46%) */
-    --blue: #467AAC;   /* hsl(209, 42%, 47%) */
-    --purple: #61589C; /* hsl(248, 28%, 48%) */
-  }
-
-  /* styles for webex-solveme */
-  .webex-incorrect,
-  .webex-radiogroup label.webex-incorrect{
-      border: 2px dotted var(--pink);
-      background-color: #edaddd;
-      border-radius: 0.25em;
-  }
-  .webex-correct,
-  .webex-radiogroup label.webex-correct {
-      border: 2px solid var(--green);
-      background-color: #c0edc2;
-      border-radius: 0.25em;
-  }
-  /* styles for hidden solutions */
-  .webex-solution {
-      height: 2.5em;
-      overflow-y: hidden;
-      padding: 0.5em;
-      margin-bottom: 10px;
-  }
-  .webex-solution.open {
-      height: auto;
-      border: 2px solid var(--blue);
-      border-radius: 5px;
-  }
-  .webex-solution button {
-      height: 2em;
-      margin-bottom: 0.5em;
-      border-radius: 0.5em;
-      background-color: var(--blue);
-      color: white;
-      padding: 0 0.5em;
-  }
-  .webex-solution pre.sourceCode {
-      border-color: var(--green);
-  }
-
-  .webex-radiogroup label {
-    margin-left: 2em;
-    text-indent: -1em;
-    padding-left: 0.5em;
-    font-weight: 400;
-    display: block;
-    border: 2px solid rgba(255, 255, 255, 1);
-    border-radius: 0.25em;
-  }
-
-  .webex-radiogroup label input {
-    position: relative;
-    left: -1em;
-  }
-
-  </style>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="include/webex.css" type="text/css"/>
 
 </head>
 
@@ -2121,47 +1459,371 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About Computational Biology for All!","description":"Some additional details about the blog","authors":[]}
+{"title":"Downloading protein and DNA sequences with the rentrez package","description":"`rentrez` is a fast and easy way to access biological sequence databases.","authors":[{"author":"Nathan L. Brouwer","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-12T00:00:00.000-04:00","citationText":"Brouwer, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Computational Biology for All!</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blogroll.html">Blogroll</a>
-<a href="index.xml">
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a>
-<a href="https://github.com/brouwern/compbio4all_theblog" aria-label="Link to source">
-<i class="fab fa-github" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About Computational Biology for All!</h1>
+<h1>Downloading protein and DNA sequences with the rentrez package</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some additional details about the blog</p></p>
+<p><p><code>rentrez</code> is a fast and easy way to access biological sequence databases.</p></p>
 </div>
 
+<div class="d-byline">
+  
+  Nathan L. Brouwer
+  
+<br/>2022-05-12
+</div>
 
 <div class="d-article">
-<p>Welcome to <strong>Computational Biology for All</strong>! I'm Nathan Brouwer, a biology lecturer at the University of <a href="https://www.biology.pitt.edu/">Pittsburgh Department of Biological Science</a>. I've been using for over a decade to do and teach statistical modeling, populations simulations, bioinformatics and phylogenetics.</p>
-<!-- links to papers, contact information, etc -->
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!-- Phylogenies play an important role in computational biology and bioinformatics.  Phylogenetics itself is an obligatly computational field that only began rapid growth when computational power allowed the many algorithms it relies on to be done rapidly.  Phylogeneies of species, genes and proteins are used to address many biological issues, including -->
+<!-- * Patterns of protein evolution -->
+<!-- * Origin and evolution of phenotypic traits -->
+<!-- * Origin and progression of epidemics -->
+<!-- * Origin of evolution of diseases (e.g., zooenoses) -->
+<!-- * Prediction of protein function from its sequence -->
+<!-- * ... and many more -->
+<!-- The actual building of a phylogeny is a computationally intensive task; moreover, there are many bioinformatics and computational tasks the precede the construction of a phylogeny: -->
+<!-- * genome sequencing and assembly -->
+<!-- * computational gene prediction and annotation -->
+<!-- * database searching and results screening -->
+<!-- * pairwise sequence alignment -->
+<!-- * data organization and cleaning -->
+<!-- * multiple sequence alignment -->
+<!-- * evaluation and validation of alignment accuracy -->
+<!-- Once all of these steps have been carried out, the building of a phylogeny involves -->
+<!-- * picking a model of sequence evolution or other description of evolution -->
+<!-- * picking a statistical approach to tree construction -->
+<!-- * evaluating uncertainty in the final tree -->
+<!-- In this chapter we will work through many of these steps.  In most cases we will pick the easiest or fastest option; in later chapters we will unpack the various options.  This chapter is written as an interactive R session.  You can follow along by opening the .Rmd file of the chapter or typing the appropriate commands into your own script.  I assume that all the necessary packages have been installed and they only need to be loaded into R using the *library()* command. -->
+<!-- This lesson walks you through and entire workflow for a bioinformatics project, including -->
+<!-- <!-- check all of this -->
+<p>–&gt;</p>
+<!-- 1. obtaining FASTA sequences -->
+<!-- 1. cleaning sequences -->
+<!-- 1. creating alignments -->
+<!-- 1. creating a distance matrix -->
+<!-- 1. building a phylogenetic tree -->
+<!-- We'll examine the Shroom family of genes, which produces Shroom proteins essential for tissue formation in many multicellular eukaryotes, including neural tube formation in vertebrates.  We'll examine shroom in several very different organism, including humans, mice and sea urchins.  There is more than one type of shroom in vertebrates, and we'll also look at two different Shroom genes: shroom 1 and shroom 2. -->
+<!-- This lesson draws on skills from previous sections of the book, but is written to act as a independent summary of these activities.  There is therefore review of key aspects of R and bioinformatics throughout it. -->
+<!-- ### Vocab  -->
+<!-- ## Software Preliminaries -->
+<!-- * argument -->
+<!-- * function -->
+<!-- * list -->
+<!-- * named list -->
+<!-- * vector -->
+<!-- * named vector -->
+<!-- * for() loop -->
+<!-- * R console -->
+<!-- ### R functions -->
+<!-- * library() -->
+<!-- * round() -->
+<!-- * plot() -->
+<!-- * mtext() -->
+<!-- * nchar() -->
+<!-- * rentrez::entrez_fetch() -->
+<!-- * compbio4all::entrez_fetch_list() -->
+<!-- * compbio4all::print_msa() (Coghlan 2011) -->
+<!-- * Biostrings::AAStringSet() -->
+<!-- * msa::msa() -->
+<!-- * msa::msaConvert() -->
+<!-- * msa::msaPrettyPrint() -->
+<!-- * seqinr::dist.alignment() -->
+<!-- * ape::nj() -->
+<!-- A few things need to be done to get started with our R session. -->
+<!-- ### Download necessary packages -->
+<!-- Many *R* sessions begin by downloading necessary software packages to augment *R's* functionality. -->
+<!-- If you don't have them already, you'll need the following packages from CRAN: -->
+<!-- 1. `ape` -->
+<!-- 1. `seqinr` -->
+<!-- 1. `rentrez` -->
+<!-- 1. `devtools` -->
+<!-- The CRAN packages can be loaded with `install.packages()`.   -->
+<!-- You'll also need these packages from Bioconductor: -->
+<!-- 1. `msa` -->
+<!-- 1. `Biostrings` -->
+<!-- For installing packages from Bioconductor, see the chapter at the beginning of this book on this process. -->
+<!-- Finally, you'll need these package from GitHub -->
+<!-- 1. `compbio4all` -->
+<!-- 1. `ggmsa` -->
+<!-- To install packages from GitHub you can use the code `devtools::install_github("brouwern/compbio4all")` and `devtools::install_github("YuLab-SMU/ggmsa")` -->
+<!-- This code chunk downloads most of these packages.  The code has been commented out because it only needs to be run once.   -->
+<!-- ```{r} -->
+<!-- # Install needed packages -->
+<!-- ## CRAN PACKAGES -->
+<!-- # downloaded using install.packages() -->
+<!-- # install.packages("rentrez",dependencies = TRUE) -->
+<!-- # install.packages("devtools") -->
+<!-- # install.packages("ape") -->
+<!-- # install.packages("seqinr") -->
+<!-- ### BiocManager - CRAN package to download  -->
+<!-- ##### Bioconductor packages -->
+<!-- # requires BiocManager -->
+<!-- # install.packages("BiocManager") -->
+<!-- ## BioConductor packages -->
+<!-- ### downloaded with BiocManager::install(), NOT install.packages() -->
+<!-- # BiocManager::install("msa") -->
+<!-- # BiocManager::install("Biostrings") -->
+<!-- ## GitHub packages -->
+<!-- ### requires devtools package and its function install_github() -->
+<!-- # library(devtools) -->
+<!-- # devtools::install_github("brouwern/combio4all") -->
+<!-- # devtools::install_github("YuLab-SMU/ggmsa") -->
+<!-- ``` -->
+<!-- ### Load packages into memory -->
+<!-- We now need to load up all our bioinformatics and phylogenetics software into R.  This is done with the `library()` command.   -->
+<!-- To run this code just click on the sideways green triangle all the way to the right of the code. -->
+<!-- NOTE: You'll likely see some red code appear on your screen.  No worries, totally normal! -->
+<!-- ```{r, message= F, warning=F} -->
+<!-- # github packages -->
+<!-- library(compbio4all) -->
+<!-- library(ggmsa) -->
+<!-- # CRAN packages -->
+<!-- library(rentrez) -->
+<!-- library(seqinr) -->
+<!-- library(ape) -->
+<!-- # Bioconductor packages -->
+<!-- ## msa -->
+<!-- ### The msa package is having problems on some platforms -->
+<!-- ### You can skip the msa steps if necessary.  The msa output -->
+<!-- ### is used to make a distance matrix and then phylogenetics trees, -->
+<!-- ### but I provide code to build the matrix by hand so -->
+<!-- ### you can proceed even if msa doesn't work for you. -->
+<!-- library(msa) -->
+<!-- ## Biostrings -->
+<!-- library(Biostrings) -->
+<!-- ``` -->
+<!-- start blogplost 1 -->
+<h2 id="downloading-macro-molecular-sequences">Downloading macro-molecular sequences</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="US-NLM-NCBI-Logo2.png" width="100" /></p>
+</div>
+<p>In this post we’ll download protein sequences from the <em>shroom</em> family of genes and prepare them for use in sequence alignment. For background on <em>shroom</em> and sequence alignments, see the previous post “Understanding the evolutionary history of a gene with phylogenetic trees.”</p>
+<p>Most biologists download sequences directly from where they reside on internet, such as the <strong>National Center For Biotechnology Information</strong> (NCBI) websites. In contrast, we’ll use a function, <code>entrez_fretch()</code>, which accesses NCBI’s <a href="ncbi.nlm.nih.gov/search/"><strong>Entrez</strong></a> system of database (ncbi.nlm.nih.gov/search/). This function is from the <code>rentrez</code> package, which stands for “R-Entrez.”</p>
+<p>To work through the code in this post and use <code>entrez_fetch()</code>, you’ll need to download the package <code>rentrez</code></p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"rentrez"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>We need to tell <code>entrez_fetch()</code> several things</p>
+<ol type="1">
+<li><code>db = ...</code> the type of entrez database.<br />
+</li>
+<li><code>id = ...</code> the <strong>accession</strong> (ID) number of the sequence</li>
+<li><code>rettype = ...</code> file type what we want the function to return.</li>
+</ol>
+<p>Formally, these things are called <strong>arguments</strong> by <em>R</em>.</p>
+<p>We’ll use these settings:</p>
+<ol type="1">
+<li><code>db = "protein"</code> to access the Entrez database of protein sequences<br />
+</li>
+<li><code>rettype = "fasta"</code>, which is a standard file format for nucleic acid and protein sequences</li>
+</ol>
+<p>We’ll set <code>id = ...</code> to sequences whose <strong>accession numbers</strong> are:</p>
+<ol type="1">
+<li>NP_065910: Human shroom 3</li>
+<li>AAF13269: Mouse shroom 3a</li>
+<li>CAA58534: Human shroom 2</li>
+<li>XP_783573: Sea urchin shroom</li>
+</ol>
+<!-- There are two highly conserved regions of shroom 3 -->
+<!-- 1. ASD 1: aa 884 to aa 1062 in  hShroom3 -->
+<!-- 1. ASD 2: aa 1671 to aa 1955 in hShroom3 -->
+<p>Normally we’d have to download these sequences by hand through pointing and clicking on GeneBank records on the NCBI website. In <em>R</em> we can do it automatically; this might take a second.</p>
+<p>All the code needed is this:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Human shroom 3 (H. sapiens)</span>
+<span class='va'>hShroom3</span> <span class='op'>&lt;-</span> <span class='fu'>rentrez</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/rentrez/reference/entrez_fetch.html'>entrez_fetch</a></span><span class='op'>(</span>db <span class='op'>=</span> <span class='st'>"protein"</span>, 
+                          id <span class='op'>=</span> <span class='st'>"NP_065910"</span>, 
+                          rettype <span class='op'>=</span> <span class='st'>"fasta"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<!-- Note: if you aren't connected to wifi or the server itself is having  problem, then when you run this code you may get an error like this: -->
+<!-- `Quitting from lines 244-259 (23-MSA-walkthrough-shroom.Rmd)` -->
+<!-- `Error: HTTP failure: 500` -->
+<!-- `{"error":"error forwarding request","api-key":"71.182.228.80","type":"ip",` -->
+<!-- `"status":"ok"}` -->
+<!-- `Execution halted` -->
+<!-- You may have to try again later to knit the code. -->
+<p>The output is in <code>FASTA</code> format. We can look at the raw output by calling up the object we created. This will run as single continuous string of characters without line breaks</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hShroom3</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] &quot;&gt;NP_065910.3 protein Shroom3 [Homo sapiens]\nMMRTTEDFHKPSATLNSNTATKGRYIYLEAF ...&quot;</code></pre>
+</div>
+<p>We can use the <code>cat()</code> function to do a little formatting for us; it essentially just enforces the <strong>lines breaks</strong>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='va'>hShroom3</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>&gt;NP_065910.3 protein Shroom3 [Homo sapiens]
+MMRTTEDFHKPSATLNSNTATKGRYIYLEAFLEGGAPWGFTLKGGLEHGEPLIISKVEEGGKADTLSSKL
+QAGDEVVHINEVTLSSSRKEAVSLVKGSYKTLRLVVRRDVCTDPGHADTGASNFVSPEHLTSGPQHRKAA
+WSGGVKLRLKHRRSEPAGRPHSWHTTKSGEKQPDASMMQISQGMIGPPWHQSYHSSSSTSDLSNYDHAYL
+RRSPDQCSSQGSMESLEPSGAYPPCHLSPAKSTGSIDQLSHFHNKRDSAYSSFSTSSSILEYPHPGISGR
+ERSGSMDNTSARGGLLEGMRQADIRYVKTVYDTRRGVSAEYEVNSSALLLQGREARASANGQGYDKWSNI
+PRGKGVPPPSWSQQCPSSLETATDNLPPKVGAPLPPARSDSYAAFRHRERPSSWSSLDQKRLCRPQANSL
+GSLKSPFIEEQLHTVLEKSPENSPPVKPKHNYTQKAQPGQPLLPTSIYPVPSLEPHFAQVPQPSVSSNGM
+LYPALAKESGYIAPQGACNKMATIDENGNQNGSGRPGFAFCQPLEHDLLSPVEKKPEATAKYVPSKVHFC
+SVPENEEDASLKRHLTPPQGNSPHSNERKSTHSNKPSSHPHSLKCPQAQAWQAGEDKRSSRLSEPWEGDF
+QEDHNANLWRRLEREGLGQSLSGNFGKTKSAFSSLQNIPESLRRHSSLELGRGTQEGYPGGRPTCAVNTK
+AEDPGRKAAPDLGSHLDRQVSYPRPEGRTGASASFNSTDPSPEEPPAPSHPHTSSLGRRGPGPGSASALQ
+GFQYGKPHCSVLEKVSKFEQREQGSQRPSVGGSGFGHNYRPHRTVSTSSTSGNDFEETKAHIRFSESAEP
+LGNGEQHFKNGELKLEEASRQPCGQQLSGGASDSGRGPQRPDARLLRSQSTFQLSSEPEREPEWRDRPGS
+PESPLLDAPFSRAYRNSIKDAQSRVLGATSFRRRDLELGAPVASRSWRPRPSSAHVGLRSPEASASASPH
+TPRERHSVTPAEGDLARPVPPAARRGARRRLTPEQKKRSYSEPEKMNEVGIVEEAEPAPLGPQRNGMRFP
+ESSVADRRRLFERDGKACSTLSLSGPELKQFQQSALADYIQRKTGKRPTSAAGCSLQEPGPLRERAQSAY
+LQPGPAALEGSGLASASSLSSLREPSLQPRREATLLPATVAETQQAPRDRSSSFAGGRRLGERRRGDLLS
+GANGGTRGTQRGDETPREPSSWGARAGKSMSAEDLLERSDVLAGPVHVRSRSSPATADKRQDVLLGQDSG
+FGLVKDPCYLAGPGSRSLSCSERGQEEMLPLFHHLTPRWGGSGCKAIGDSSVPSECPGTLDHQRQASRTP
+CPRPPLAGTQGLVTDTRAAPLTPIGTPLPSAIPSGYCSQDGQTGRQPLPPYTPAMMHRSNGHTLTQPPGP
+RGCEGDGPEHGVEEGTRKRVSLPQWPPPSRAKWAHAAREDSLPEESSAPDFANLKHYQKQQSLPSLCSTS
+DPDTPLGAPSTPGRISLRISESVLRDSPPPHEDYEDEVFVRDPHPKATSSPTFEPLPPPPPPPPSQETPV
+YSMDDFPPPPPHTVCEAQLDSEDPEGPRPSFNKLSKVTIARERHMPGAAHVVGSQTLASRLQTSIKGSEA
+ESTPPSFMSVHAQLAGSLGGQPAPIQTQSLSHDPVSGTQGLEKKVSPDPQKSSEDIRTEALAKEIVHQDK
+SLADILDPDSRLKTTMDLMEGLFPRDVNLLKENSVKRKAIQRTVSSSGCEGKRNEDKEAVSMLVNCPAYY
+SVSAPKAELLNKIKEMPAEVNEEEEQADVNEKKAELIGSLTHKLETLQEAKGSLLTDIKLNNALGEEVEA
+LISELCKPNEFDKYRMFIGDLDKVVNLLLSLSGRLARVENVLSGLGEDASNEERSSLYEKRKILAGQHED
+ARELKENLDRRERVVLGILANYLSEEQLQDYQHFVKMKSTLLIEQRKLDDKIKLGQEQVKCLLESLPSDF
+IPKAGALALPPNLTSEPIPAGGCTFSGIFPTLTSPL</code></pre>
+</div>
+<p>Note the initial <code>&gt;</code>, then the header line of <code>NP_065910.3 protein Shroom3 [Homo sapiens]</code>. After that is the amino acid sequence. The underlying data also includes the <strong>newline character</strong> <code>\n</code> to designate where each line of amino acids stops (that is, the location of line breaks).</p>
+<p>We can get the rest of the data by just changing the <code>id = ...</code> argument in the calls to <code>entrez_fetch()</code>:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Mouse shroom 3a (M. musculus)</span>
+<span class='va'>mShroom3a</span> <span class='op'>&lt;-</span> <span class='fu'>rentrez</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/rentrez/reference/entrez_fetch.html'>entrez_fetch</a></span><span class='op'>(</span>db <span class='op'>=</span> <span class='st'>"protein"</span>, 
+                          id <span class='op'>=</span> <span class='st'>"AAF13269"</span>, 
+                          rettype <span class='op'>=</span> <span class='st'>"fasta"</span><span class='op'>)</span>
+
+<span class='co'># Human shroom 2 (H. sapiens)</span>
+<span class='va'>hShroom2</span> <span class='op'>&lt;-</span> <span class='fu'>rentrez</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/rentrez/reference/entrez_fetch.html'>entrez_fetch</a></span><span class='op'>(</span>db <span class='op'>=</span> <span class='st'>"protein"</span>, 
+                          id <span class='op'>=</span> <span class='st'>"CAA58534"</span>, 
+                          rettype <span class='op'>=</span> <span class='st'>"fasta"</span><span class='op'>)</span>
+
+
+<span class='co'># Sea-urchin shroom</span>
+<span class='va'>sShroom</span> <span class='op'>&lt;-</span> <span class='fu'>rentrez</span><span class='fu'>::</span><span class='fu'><a href='https://docs.ropensci.org/rentrez/reference/entrez_fetch.html'>entrez_fetch</a></span><span class='op'>(</span>db <span class='op'>=</span> <span class='st'>"protein"</span>, 
+                          id <span class='op'>=</span> <span class='st'>"XP_783573"</span>, 
+                          rettype <span class='op'>=</span> <span class='st'>"fasta"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Here, I’ve pasted the function I used above three times into the code chunk and changed the id = … statement. Later in this script will avoid this clunky type of coding by using <strong>for loops</strong>.</p>
+<p>I’m going to check about how long each of these sequences is - each should have an at least slightly different length. If any are identical, I might have repeated an accession name or re-used an object name. The function <code>nchar()</code> counts of the number of characters in an <em>R</em> object.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>hShroom3</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 2070</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>mShroom3a</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 2083</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>sShroom</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1758</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>hShroom2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1673</code></pre>
+</div>
+<h2 id="prepping-macromolecular-sequences">Prepping macromolecular sequences</h2>
+<blockquote>
+<p>“90% of data analysis is data cleaning”<br />
+~Just about every data analyst and data scientist</p>
+</blockquote>
+<p>We have our sequences, but the current format isn’t directly usable for us yet because there are several things that aren’t sequence information</p>
+<ol type="1">
+<li>Metadata (the header)</li>
+<li>Page formatting information (the newline character)</li>
+</ol>
+<p>We can remove this non-sequence information using a function I wrote called <code>fasta_cleaner()</code>, which is in the <a href="https://brouwern.github.io/compbio4all/index.html"><code>compbio4all</code></a> package. The function uses <strong>regular expressions</strong> to remove the info we don’t need.</p>
+<p>If you had trouble downloading the <code>compbio4all</code> package function you can add <code>fasta_cleaner()</code> to your <code>R</code> session directly by running this code:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fasta_cleaner</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>fasta_object</span>, <span class='va'>parse</span> <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>{</span>
+
+  <span class='va'>fasta_object</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>sub</a></span><span class='op'>(</span><span class='st'>"^(&gt;)(.*?)(\\n)(.*)(\\n\\n)"</span>,<span class='st'>"\\4"</span>,<span class='va'>fasta_object</span><span class='op'>)</span>
+  <span class='va'>fasta_object</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"\n"</span>, <span class='st'>""</span>, <span class='va'>fasta_object</span><span class='op'>)</span>
+
+  <span class='kw'>if</span><span class='op'>(</span><span class='va'>parse</span> <span class='op'>==</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>{</span>
+    <span class='va'>fasta_object</span> <span class='op'>&lt;-</span> <span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_split.html'>str_split</a></span><span class='op'>(</span><span class='va'>fasta_object</span>,
+                                       pattern <span class='op'>=</span> <span class='st'>""</span>,
+                                       simplify <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+  <span class='op'>}</span>
+
+  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>fasta_object</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<p>If we run the name of the command with out any quotation marks we can see the code:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fasta_cleaner</span>
+</code></pre>
+</div>
+<pre><code>function(fasta_object, parse = TRUE){
+
+  fasta_object &lt;- sub(&quot;^(&gt;)(.*?)(\\n)(.*)(\\n\\n)&quot;,&quot;\\4&quot;,fasta_object)
+  fasta_object &lt;- gsub(&quot;\n&quot;, &quot;&quot;, fasta_object)
+
+  if(parse == TRUE){
+    fasta_object &lt;- stringr::str_split(fasta_object,
+                                       pattern = &quot;&quot;,
+                                       simplify = FALSE)
+  }
+
+  return(fasta_object[[1]])
+}</code></pre>
+</div>
+<p>Now use the function to clean our sequences; don’t worry about what <code>parse = ...</code> is for right now.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hShroom3</span>  <span class='op'>&lt;-</span> <span class='fu'>fasta_cleaner</span><span class='op'>(</span><span class='va'>hShroom3</span>,  parse <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span>
+<span class='va'>mShroom3a</span> <span class='op'>&lt;-</span> <span class='fu'>fasta_cleaner</span><span class='op'>(</span><span class='va'>mShroom3a</span>, parse <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span>
+<span class='va'>hShroom2</span>  <span class='op'>&lt;-</span> <span class='fu'>fasta_cleaner</span><span class='op'>(</span><span class='va'>hShroom2</span>,  parse <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span>
+<span class='va'>sShroom</span>   <span class='op'>&lt;-</span> <span class='fu'>fasta_cleaner</span><span class='op'>(</span><span class='va'>sShroom</span>,   parse <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>I wanted to do something four times, so I’ve repeated the same line of code four times with the necessary change. This gets the job done, but there are better ways to do this using <code>for()</code> loops.</p>
+<p>Now let’s take a peek at what our sequences look like:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>hShroom3</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>[1] &quot;MMRTTEDFHKPSATLNSNTATKGRYIYLEAFLEGGAPWGFTLKGGLEHGEPLIISKVEEGGKADTLSSKLQAGDE ...&quot;</code></pre>
+</div>
+<p>The header and slash-n newline characters are gone. The sequence is now ready for use by our <code>R</code> alignment functions.</p>
+<!-- start second blog post -->
+<div class="sourceCode" id="cb9"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2171,178 +1833,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--radix_placeholder_site_after_body-->
-<script>
-
-/* update total correct if #webex-total_correct exists */
-update_total_correct = function() {
-  console.log("webex: update total_correct");
-
-  if (t = document.getElementById("webex-total_correct")) {
-    var correct = document.getElementsByClassName("webex-correct").length;
-    var solvemes = document.getElementsByClassName("webex-solveme").length;
-    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
-    var selects = document.getElementsByClassName("webex-select").length;
-    
-    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-  }
-}
-
-/* webex-solution button toggling function */
-b_func = function() {
-  console.log("webex: toggle hide");
-  
-  var cl = this.parentElement.classList;
-  if (cl.contains('open')) {
-    cl.remove("open");
-  } else {
-    cl.add("open");
-  }
-}
-
-/* function for checking solveme answers */
-solveme_func = function(e) {
-  console.log("webex: check solveme");
-
-  var real_answers = JSON.parse(this.dataset.answer);
-  var my_answer = this.value;
-  var cl = this.classList;
-  if (cl.contains("ignorecase")) {
-    my_answer = my_answer.toLowerCase();
-  }
-  if (cl.contains("nospaces")) {
-    my_answer = my_answer.replace(/ /g, "")
-  }
-
-  if (my_answer == "") {
-    cl.remove("webex-correct");
-    cl.remove("webex-incorrect");
-  } else if (real_answers.includes(my_answer)) {
-    cl.add("webex-correct");
-    cl.remove("webex-incorrect");
-  } else {
-    cl.add("webex-incorrect");
-    cl.remove("webex-correct");
-  }
-
-  // match numeric answers within a specified tolerance
-  if(this.dataset.tol > 0){
-    var tol = JSON.parse(this.dataset.tol);
-    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-    if (matches.reduce((a, b) => a + b, 0) > 0) {
-      cl.add("webex-correct");
-    } else {
-      cl.remove("webex-correct");
-    }
-  }
-
-  // added regex bit
-  if (cl.contains("regex")){
-    answer_regex = RegExp(real_answers.join("|"))
-    if (answer_regex.test(my_answer)) {
-      cl.add("webex-correct");
-    }
-  }
-
-  update_total_correct();
-}
-
-/* function for checking select answers */
-select_func = function(e) {
-  console.log("webex: check select");
-  
-  var cl = this.classList
-  
-  /* add style */
-  cl.remove("webex-incorrect");
-  cl.remove("webex-correct");
-  if (this.value == "answer") {
-    cl.add("webex-correct");
-  } else if (this.value != "blank") {
-    cl.add("webex-incorrect");
-  }
-  
-  update_total_correct();
-}
-
-/* function for checking radiogroups answers */
-radiogroups_func = function(e) {
-  console.log("webex: check radiogroups");
-
-  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-  var cl = checked_button.parentElement.classList;
-  var labels = checked_button.parentElement.parentElement.children;
-  
-  /* get rid of styles */
-  for (i = 0; i < labels.length; i++) {
-    labels[i].classList.remove("webex-incorrect");
-    labels[i].classList.remove("webex-correct");
-  }
-  
-  /* add style */
-  if (checked_button.value == "answer") {
-    cl.add("webex-correct");
-  } else {
-    cl.add("webex-incorrect");
-  }
-  
-  update_total_correct();
-}
-
-window.onload = function() {
-  console.log("onload");
-  /* set up solution buttons */
-  var buttons = document.getElementsByTagName("button");
-
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].parentElement.classList.contains('webex-solution')) {
-      buttons[i].onclick = b_func;
-    }
-  }
-
-  /* set up webex-solveme inputs */
-  var solveme = document.getElementsByClassName("webex-solveme");
-
-  for (var i = 0; i < solveme.length; i++) {
-    /* make sure input boxes don't auto-anything */
-    solveme[i].setAttribute("autocomplete","off");
-    solveme[i].setAttribute("autocorrect", "off");
-    solveme[i].setAttribute("autocapitalize", "off");
-    solveme[i].setAttribute("spellcheck", "false");
-    solveme[i].value = "";
-
-    /* adjust answer for ignorecase or nospaces */
-    var cl = solveme[i].classList;
-    var real_answer = solveme[i].dataset.answer;
-    if (cl.contains("ignorecase")) {
-      real_answer = real_answer.toLowerCase();
-    }
-    if (cl.contains("nospaces")) {
-      real_answer = real_answer.replace(/ /g, "");
-    }
-    solveme[i].dataset.answer = real_answer;
-
-    /* attach checking function */
-    solveme[i].onkeyup = solveme_func;
-    solveme[i].onchange = solveme_func;
-  }
-  
-  /* set up radiogroups */
-  var radiogroups = document.getElementsByClassName("webex-radiogroup");
-  for (var i = 0; i < radiogroups.length; i++) {
-    radiogroups[i].onchange = radiogroups_func;
-  }
-  
-  /* set up selects */
-  var selects = document.getElementsByClassName("webex-select");
-  for (var i = 0; i < selects.length; i++) {
-    selects[i].onchange = select_func;
-  }
-
-  update_total_correct();
-}
-
-</script>
-
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom"></div>

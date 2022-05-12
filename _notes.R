@@ -13,7 +13,7 @@ rmarkdown::render_site(encoding = 'UTF-8')
 
 # new post
 distill::create_post(
-  title = "webexercises test", # mandatory
+  title = "Downloading protein and DNA sequences with the `entrez` package", # mandatory
   author = "Nathan L. Brouwer",
   slug = "auto", # generates a website slug (URL)
   date_prefix = TRUE, # adds date for sorting
@@ -21,6 +21,23 @@ distill::create_post(
   edit = interactive()
 )
 
+# 
+# ---
+#   title: "Welcome to Computational Biology for All!"
+# description: |
+#   Welcome to my new, Computational Biology for All!
+#   author:
+#   - name: Nathan L. Brouwer
+# url: https://www.linkedin.com/in/nathan-brouwer-phd-97100980/
+#   affiliation: University of Pittsburgh
+# affiliation_url: https://www.biology.pitt.edu/
+#   date: 05-05-2022
+# output:
+#   distill::distill_article:
+#   self_contained: false
+# ---
+  
+  
 # ---
 #   title: "Blood feud: ggplot versus base R for beginers"
 # description: |
@@ -33,9 +50,13 @@ distill::create_post(
 # draft: false
 # categories:
 #   - ggplot2 versus R
-# - base R
-# - time series
+#   - base R
+#   - time series
 # ---
 
 
 # https://rstudio.github.io/distill/blog_workflow.html
+
+
+# shortening fASTA seq
+substring()

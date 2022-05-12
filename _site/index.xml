@@ -7,43 +7,24 @@
     <description>Computational Biology for All!  A blog for those learning &amp; teaching computational biology &amp; bioinformatics.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>webexercises test</title>
+      <title>Downloading protein and DNA sequences with the rentrez package</title>
       <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-10-webexercises-test</link>
-      <description>A short description of the post.</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-10-webexercises-test</guid>
-      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
+      <link>https://compbio4all.netlify.app/posts/2022-05-12-downloading-protein-and-dna-sequences-with-the-rentrez-package</link>
+      <description>`rentrez` is a fast and easy way to access biological sequence databases.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-12-downloading-protein-and-dna-sequences-with-the-rentrez-package</guid>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-12-downloading-protein-and-dna-sequences-with-the-rentrez-package/US-NLM-NCBI-Logo2.png" medium="image" type="image/png" width="200" height="247"/>
     </item>
     <item>
-      <title>A latex cheatsheet for biologists</title>
+      <title>Understanding the evolutionary history of a gene with phylogenetic trees</title>
       <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-07-a-latex-cheatsheet-for-biologists</link>
-      <description>A short description of the post.</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-07-a-latex-cheatsheet-for-biologists</guid>
-      <pubDate>Sat, 07 May 2022 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Blood feud: ggplot versus base R for beginers</title>
-      <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers</link>
-      <description>ggplot2 is powerful, but what is its cognitive load for beginners?.</description>
-      <category>ggplot2 versus R</category>
-      <category>base R</category>
-      <category>time series</category>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers</guid>
-      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://compbio4all.netlify.app/posts/2022-05-05-blood-feud-ggplot-versus-base-r-for-beginers/Venationes_Ferarum_Avium_Piscium_BM_1957041341.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Welcome to Computational Biology for All!</title>
-      <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/welcome</link>
-      <description>Welcome to our new blog, Computational Biology for All!. We hope you enjoy 
-reading what we have to say!</description>
-      <guid>https://compbio4all.netlify.app/posts/welcome</guid>
-      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
+      <link>https://compbio4all.netlify.app/posts/2022-05-11-understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees</link>
+      <description>An outline of why and how to build evolutionary trees.</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-11-understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees</guid>
+      <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://compbio4all.netlify.app/posts/2022-05-11-understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees/rocMSA.png" medium="image" type="image/png" width="1080" height="504"/>
     </item>
   </channel>
 </rss>

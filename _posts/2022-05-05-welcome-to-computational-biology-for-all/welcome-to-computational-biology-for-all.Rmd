@@ -1,21 +1,35 @@
 ---
-title: "Hello to Computational Biology for All!"
+title: "Welcome to Computational Biology for All!"
 description: |
-  A short description of the post.
+  Welcome to my new blog, Computational Biology for All!
 author:
-  - name: Nathan Brouwer
-    url: https://example.com/norajones
-date: 2022-05-05
+  - name: Nathan L. Brouwer
+    url: https://www.linkedin.com/in/nathan-brouwer-phd-97100980/
+    affiliation: University of Pittsburgh
+    affiliation_url: https://www.biology.pitt.edu/
+date: 05-05-2022
+draft: false
 output:
   distill::distill_article:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-This is the text of the blog.
+
+Welcome to **Computational Biology for All**.  This blog is dedicated to introducing and explaining quantitative methods to biologists.  Topics will include:
+
+* computational biology
+* bioinformatics
+* phylogenetics
+* data science
+* statistical analysis
+* simulation
+* data visualization
+
+
+To kick off the blog I am going to do a series outlining how to carryout a common task in molecular biology, bioinformatics, and evolutionary biology: building a [multiple sequence alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment) and [phylogenetic tree](https://en.wikipedia.org/wiki/Phylogenetic_tree) using protein sequences obtained from the National Institutes of Health's databases. 
 
 

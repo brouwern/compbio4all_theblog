@@ -87,638 +87,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Computational Biology for All!: About Computational Biology for All!</title>
+  <title>Understanding the evolutionary history of a gene with phylogenetic trees</title>
 
-  <meta property="description" itemprop="description" content="Some additional details about the blog"/>
+  <meta property="description" itemprop="description" content="An outline of why and how to build evolutionary trees."/>
 
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-05-11"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-11"/>
+  <meta name="article:author" content="Nathan L. Brouwer"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Computational Biology for All!: About Computational Biology for All!"/>
+  <meta property="og:title" content="Understanding the evolutionary history of a gene with phylogenetic trees"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Some additional details about the blog"/>
+  <meta property="og:description" content="An outline of why and how to build evolutionary trees."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Computational Biology for All!"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Computational Biology for All!: About Computational Biology for All!"/>
-  <meta property="twitter:description" content="Some additional details about the blog"/>
+  <meta property="twitter:title" content="Understanding the evolutionary history of a gene with phylogenetic trees"/>
+  <meta property="twitter:description" content="An outline of why and how to build evolutionary trees."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["About Computational Biology for All!"]},{"type":"character","attributes":{},"value":["Some additional details about the blog"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Understanding the evolutionary history of a gene with phylogenetic trees"]},{"type":"character","attributes":{},"value":["An outline of why and how to build evolutionary trees.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Nathan L. Brouwer"]}]}]},{"type":"character","attributes":{},"value":["2022-05-11"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["rocMSA.png","shroomMSA.png","shroomTREE.png","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/anchor-4.2.2/anchor.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/bowser-1.9.3/bowser.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/distill-2.2.21/template.v2.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/header-attrs-2.11/header-attrs.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.min.map","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/popper-2.6.0/popper.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy-bundle.umd.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy-light-border.css","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.css","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.umd.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2037,82 +1438,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/popper-2.6.0/popper.min.js"></script>
+  <link href="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <style type="text/css">
-  :root {
-    --pink: #983E82;   /* hsl(315, 42%, 42%) */
-    --orange: #E2A458; /* hsl( 33, 70%, 62%) */
-    --yellow: #F5DC70; /* hsl( 49, 87%, 70%) */
-    --green: #59935B;  /* hsl(122, 25%, 46%) */
-    --blue: #467AAC;   /* hsl(209, 42%, 47%) */
-    --purple: #61589C; /* hsl(248, 28%, 48%) */
-  }
-
-  /* styles for webex-solveme */
-  .webex-incorrect,
-  .webex-radiogroup label.webex-incorrect{
-      border: 2px dotted var(--pink);
-      background-color: #edaddd;
-      border-radius: 0.25em;
-  }
-  .webex-correct,
-  .webex-radiogroup label.webex-correct {
-      border: 2px solid var(--green);
-      background-color: #c0edc2;
-      border-radius: 0.25em;
-  }
-  /* styles for hidden solutions */
-  .webex-solution {
-      height: 2.5em;
-      overflow-y: hidden;
-      padding: 0.5em;
-      margin-bottom: 10px;
-  }
-  .webex-solution.open {
-      height: auto;
-      border: 2px solid var(--blue);
-      border-radius: 5px;
-  }
-  .webex-solution button {
-      height: 2em;
-      margin-bottom: 0.5em;
-      border-radius: 0.5em;
-      background-color: var(--blue);
-      color: white;
-      padding: 0 0.5em;
-  }
-  .webex-solution pre.sourceCode {
-      border-color: var(--green);
-  }
-
-  .webex-radiogroup label {
-    margin-left: 2em;
-    text-indent: -1em;
-    padding-left: 0.5em;
-    font-weight: 400;
-    display: block;
-    border: 2px solid rgba(255, 255, 255, 1);
-    border-radius: 0.25em;
-  }
-
-  .webex-radiogroup label input {
-    position: relative;
-    left: -1em;
-  }
-
-  </style>
   <!--/radix_placeholder_site_in_header-->
 
-  <link rel="stylesheet" href="include/webex.css" type="text/css"/>
 
 </head>
 
@@ -2121,46 +1459,170 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"About Computational Biology for All!","description":"Some additional details about the blog","authors":[]}
+{"title":"Understanding the evolutionary history of a gene with phylogenetic trees","description":"An outline of why and how to build evolutionary trees.","authors":[{"author":"Nathan L. Brouwer","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-11T00:00:00.000-04:00","citationText":"Brouwer, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Computational Biology for All!</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blogroll.html">Blogroll</a>
-<a href="index.xml">
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a>
-<a href="https://github.com/brouwern/compbio4all_theblog" aria-label="Link to source">
-<i class="fab fa-github" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>About Computational Biology for All!</h1>
+<h1>Understanding the evolutionary history of a gene with phylogenetic trees</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Some additional details about the blog</p></p>
+<p><p>An outline of why and how to build evolutionary trees.</p></p>
 </div>
 
+<div class="d-byline">
+  
+  Nathan L. Brouwer
+  
+<br/>2022-05-11
+</div>
 
 <div class="d-article">
-<p>Welcome to <strong>Computational Biology for All</strong>! I'm Nathan Brouwer, a biology lecturer at the University of <a href="https://www.biology.pitt.edu/">Pittsburgh Department of Biological Science</a>. I've been using for over a decade to do and teach statistical modeling, populations simulations, bioinformatics and phylogenetics.</p>
-<!-- links to papers, contact information, etc -->
+<p>The study of biology span a remarkable range of scales, from biochemical interactions at the scale of individual molecules to the functioning of the entire earth. Despite this range, three tools play an important role across many of these scales:</p>
+<ol type="1">
+<li><strong>Databases</strong> of DNA and protein sequences<br />
+</li>
+<li><strong>Alignments</strong> of sequence data</li>
+<li><strong>Phylogenetic trees</strong> depicting evolutionary relationships</li>
+</ol>
+<p>These three are interrelated, because alignments are built from DNA and protein sequences obtained from databases, and most phylogenetic trees are now built from sequence data, typically organized as a <strong>multiple sequence alignment (MSA)</strong>.</p>
+<p>Biochemists and molecular biologists use these tools to understand and predict the function of proteins. For example, in the late 1990s researcher Jeffrey Hildebrand identified a protein that played a key roll in the development of vertebrate central nervous systems (<a href="https://www.sciencedirect.com/science/article/pii/S0092867400815378">Hildebrand and Soriano 1999</a>). He named the gene and protein “shroom” because when mutated the brain and skull of mice failed to form properly and bloomed out the back of their head like a fungus.</p>
+<p>Hildebrand determined the amino acid sequence of the protein and queried a database of DNA and protein sequences to see if <em>shroom</em> had ever been studied before. It had in frogs, but its function was somewhat mis-characterized. Over the last 20 years, Dr. Hildebrand and other researchers have shown that shroom occurs in many organisms and plays a central role in key stages of early development prior to birth, from the formation of fruit fly wings to proper formation of the spinal cord and central nervous system. Recently, researchers have associated mutations in shroom to the incidence of the developmental disorder <a href="https://www.cdc.gov/ncbddd/spinabifida/facts.html#:~:text=Spina%20bifida%20is%20a%20condition,not%20close%20all%20the%20way">spina bifida</a> (<a href="https://link.springer.com/article/10.1007/s00439-017-1864-x">Chen et al. 2018</a>, <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/cge.13804?casa_token=tL5doP9UXF8AAAAA%3AdouI80akWyKA-F7Td6RNtCt_EhN8lvMmqqXZp9Z8X2_N1VnjwbreUgzsBV_ufEgcJfRUOOsLSub3UMA">Deshwar et al. 2020</a>).</p>
+<p>Sequence databases play a key roll throughout this research for identifying other organisms that have the shroom gene (<a href="https://bmcmolcellbiol.biomedcentral.com/articles/10.1186/1471-2121-7-18">Hagens et al. 2006</a>). Indeed, the Hildebrand lab has leveraged the occurrence of shroom in fruit flies to study what shroom does at the cellular level, determine the role of the different variants of the shroom gene and proteins that occur in many organisms (<a href="https://anatomypubs.onlinelibrary.wiley.com/doi/full/10.1002/dvdy.22326?casa_token=QaKkh-Gpj30AAAAA%3AJc4Ec-f13P2mseiOO1Cf0ib4Lqb7uoMuQ366d1sMjGrGMAjjxhdS_u580z2IZJ6wX_cqXQn_LssC31I">Bolinger et al. 2010</a>), and identify what other proteins <em>shroom</em> interacts with (<a href="https://journals.biologists.com/bio/article/10/2/bio055640/222728/A-modifier-screen-identifies-regulators-of">Hildebrand et al. 2021</a>).</p>
+<p>Multiple sequence alignments are often used to identify the parts of proteins that are likely involved in key functions, such as binding to other proteins or carrying out chemical reactions (e.g. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081075">Mohan, Hildebrand et al. 2013</a>). This information can then be used when interpreting results from experiments or designing studies that mutate part of a protein to change its effect or prevent it from being created entirely.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="rocMSA.png" alt="Alignment of focal part of the protein Rock1, which binds shroom.  Mohan et al. 2013 https://doi.org/10.1371/journal.pone.0081075.  CC-BY" width="540" />
+<p class="caption">
+Figure 1: Alignment of focal part of the protein Rock1, which binds shroom. Mohan et al. 2013 <a href="https://doi.org/10.1371/journal.pone.0081075" class="uri">https://doi.org/10.1371/journal.pone.0081075</a>. CC-BY
+</p>
+</div>
+</div>
+<p>Phylogenetic trees can be built from multiple sequence alignments to visualize the evolutionary relationships among genes.</p>
+<p>TODO: insert phylogeny</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="shroomTREE.png" width="770" /></p>
+</div>
+<p>In subsequent posts, I will present a workflow for obtaining sequences, building an MSA, and creating a phylogenetic tree of the shroom gene family. Many biologist will use web-browser based tools and GUI software such as MEGA to do this (<a href="https://academic.oup.com/bib/article/9/4/299/267027?login=true">Kumar et al. 2008</a>); we’ll do this all in a reproducible and extensible way in R.</p>
+<p>We will proceed through the following steps:</p>
+<ol type="1">
+<li>Starting with a set of published shroom gene identification numbers <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081075">Mohan, Hildebrand et al. 2013</a>, we’ll download shroom sequences using the rentrez package (<a href="https://peerj.com/preprints/3179/">Winter 2017</a>.</li>
+<li>We’ll then clean up the data a bit and explore alignments between pairs of sequences using pairwise alignments, thanks to the <a href="https://bioconductor.org/packages/release/bioc/html/Biostrings.html">Biostrings</a> package.</li>
+<li>Next, we’ll build a full multiple sequence alignment using (<a href="https://academic.oup.com/bioinformatics/article/31/24/3997/197486?login=true">Bodenhofer et al. 2015</a>).</li>
+<li>We’ll visualize a focal section of our shroom MSA using the ggplot2 extension <a href="http://yulab-smu.top/ggmsa/articles/ggmsa.html#:~:text=ggmsa%20is%20a%20package%20designed,R%20extremely%20simple%20and%20powerful">ggmsa</a>.</li>
+<li>Finally, we’ll build a phylogenetic tree with the <a href="https://cran.r-project.org/web/packages/ape/index.html">ape</a> package.</li>
+</ol>
+<p>After this series of blog posts is complete, future posts will provide more details about the biological, computational, and R programming aspects of these methods.</p>
+<strong>Table 1</strong>: shroom sequence identification codes (accession numbers) from <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081075">Mohan, Hildebrand et al. 2013</a>.
+<div class="layout-chunk" data-layout="l-body">
+<table style="width:86%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 34%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">accession</th>
+<th style="text-align: center;">name.orig</th>
+<th style="text-align: center;">name.new</th>
+<th style="text-align: center;">spp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">CAA78718</td>
+<td style="text-align: center;">X. laevis Apx</td>
+<td style="text-align: center;">xShroom1</td>
+<td style="text-align: center;">Xenopus</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">NP_597713</td>
+<td style="text-align: center;">H. sapiens APXL2</td>
+<td style="text-align: center;">hShroom1</td>
+<td style="text-align: center;">Homo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">CAA58534</td>
+<td style="text-align: center;">H. sapiens APXL</td>
+<td style="text-align: center;">hShroom2</td>
+<td style="text-align: center;">Homo</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ABD19518</td>
+<td style="text-align: center;">M. musculus Apxl</td>
+<td style="text-align: center;">mShroom2</td>
+<td style="text-align: center;">Mus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">AAF13269</td>
+<td style="text-align: center;">M. musculus ShroomL</td>
+<td style="text-align: center;">mShroom3a</td>
+<td style="text-align: center;">Mus</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AAF13270</td>
+<td style="text-align: center;">M. musculus ShroomS</td>
+<td style="text-align: center;">mShroom3b</td>
+<td style="text-align: center;">Mus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NP_065910</td>
+<td style="text-align: center;">H. sapiens Shroom</td>
+<td style="text-align: center;">hShroom3</td>
+<td style="text-align: center;">Homo</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ABD59319</td>
+<td style="text-align: center;">X. laevis Shroom-like</td>
+<td style="text-align: center;">xShroom3</td>
+<td style="text-align: center;">Xenopus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">NP_065768</td>
+<td style="text-align: center;">H. sapiens KIAA1202</td>
+<td style="text-align: center;">hShroom4a</td>
+<td style="text-align: center;">Homo</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">AAK95579</td>
+<td style="text-align: center;">H. sapiens SHAP-A</td>
+<td style="text-align: center;">hShroom4b</td>
+<td style="text-align: center;">Homo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ABA81834</td>
+<td style="text-align: center;">D. melanogaster Shroom</td>
+<td style="text-align: center;">dmShroom</td>
+<td style="text-align: center;">Drosophila</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">EAA12598</td>
+<td style="text-align: center;">A. gambiae Shroom</td>
+<td style="text-align: center;">agShroom</td>
+<td style="text-align: center;">mosquito</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">XP_392427</td>
+<td style="text-align: center;">A. mellifera Shroom</td>
+<td style="text-align: center;">amShroom</td>
+<td style="text-align: center;">bee</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">XP_783573</td>
+<td style="text-align: center;">S. purpuratus Shroom</td>
+<td style="text-align: center;">spShroom</td>
+<td style="text-align: center;">sea urchin</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2171,178 +1633,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <!--radix_placeholder_site_after_body-->
-<script>
-
-/* update total correct if #webex-total_correct exists */
-update_total_correct = function() {
-  console.log("webex: update total_correct");
-
-  if (t = document.getElementById("webex-total_correct")) {
-    var correct = document.getElementsByClassName("webex-correct").length;
-    var solvemes = document.getElementsByClassName("webex-solveme").length;
-    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
-    var selects = document.getElementsByClassName("webex-select").length;
-    
-    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
-  }
-}
-
-/* webex-solution button toggling function */
-b_func = function() {
-  console.log("webex: toggle hide");
-  
-  var cl = this.parentElement.classList;
-  if (cl.contains('open')) {
-    cl.remove("open");
-  } else {
-    cl.add("open");
-  }
-}
-
-/* function for checking solveme answers */
-solveme_func = function(e) {
-  console.log("webex: check solveme");
-
-  var real_answers = JSON.parse(this.dataset.answer);
-  var my_answer = this.value;
-  var cl = this.classList;
-  if (cl.contains("ignorecase")) {
-    my_answer = my_answer.toLowerCase();
-  }
-  if (cl.contains("nospaces")) {
-    my_answer = my_answer.replace(/ /g, "")
-  }
-
-  if (my_answer == "") {
-    cl.remove("webex-correct");
-    cl.remove("webex-incorrect");
-  } else if (real_answers.includes(my_answer)) {
-    cl.add("webex-correct");
-    cl.remove("webex-incorrect");
-  } else {
-    cl.add("webex-incorrect");
-    cl.remove("webex-correct");
-  }
-
-  // match numeric answers within a specified tolerance
-  if(this.dataset.tol > 0){
-    var tol = JSON.parse(this.dataset.tol);
-    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
-    if (matches.reduce((a, b) => a + b, 0) > 0) {
-      cl.add("webex-correct");
-    } else {
-      cl.remove("webex-correct");
-    }
-  }
-
-  // added regex bit
-  if (cl.contains("regex")){
-    answer_regex = RegExp(real_answers.join("|"))
-    if (answer_regex.test(my_answer)) {
-      cl.add("webex-correct");
-    }
-  }
-
-  update_total_correct();
-}
-
-/* function for checking select answers */
-select_func = function(e) {
-  console.log("webex: check select");
-  
-  var cl = this.classList
-  
-  /* add style */
-  cl.remove("webex-incorrect");
-  cl.remove("webex-correct");
-  if (this.value == "answer") {
-    cl.add("webex-correct");
-  } else if (this.value != "blank") {
-    cl.add("webex-incorrect");
-  }
-  
-  update_total_correct();
-}
-
-/* function for checking radiogroups answers */
-radiogroups_func = function(e) {
-  console.log("webex: check radiogroups");
-
-  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
-  var cl = checked_button.parentElement.classList;
-  var labels = checked_button.parentElement.parentElement.children;
-  
-  /* get rid of styles */
-  for (i = 0; i < labels.length; i++) {
-    labels[i].classList.remove("webex-incorrect");
-    labels[i].classList.remove("webex-correct");
-  }
-  
-  /* add style */
-  if (checked_button.value == "answer") {
-    cl.add("webex-correct");
-  } else {
-    cl.add("webex-incorrect");
-  }
-  
-  update_total_correct();
-}
-
-window.onload = function() {
-  console.log("onload");
-  /* set up solution buttons */
-  var buttons = document.getElementsByTagName("button");
-
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].parentElement.classList.contains('webex-solution')) {
-      buttons[i].onclick = b_func;
-    }
-  }
-
-  /* set up webex-solveme inputs */
-  var solveme = document.getElementsByClassName("webex-solveme");
-
-  for (var i = 0; i < solveme.length; i++) {
-    /* make sure input boxes don't auto-anything */
-    solveme[i].setAttribute("autocomplete","off");
-    solveme[i].setAttribute("autocorrect", "off");
-    solveme[i].setAttribute("autocapitalize", "off");
-    solveme[i].setAttribute("spellcheck", "false");
-    solveme[i].value = "";
-
-    /* adjust answer for ignorecase or nospaces */
-    var cl = solveme[i].classList;
-    var real_answer = solveme[i].dataset.answer;
-    if (cl.contains("ignorecase")) {
-      real_answer = real_answer.toLowerCase();
-    }
-    if (cl.contains("nospaces")) {
-      real_answer = real_answer.replace(/ /g, "");
-    }
-    solveme[i].dataset.answer = real_answer;
-
-    /* attach checking function */
-    solveme[i].onkeyup = solveme_func;
-    solveme[i].onchange = solveme_func;
-  }
-  
-  /* set up radiogroups */
-  var radiogroups = document.getElementsByClassName("webex-radiogroup");
-  for (var i = 0; i < radiogroups.length; i++) {
-    radiogroups[i].onchange = radiogroups_func;
-  }
-  
-  /* set up selects */
-  var selects = document.getElementsByClassName("webex-select");
-  for (var i = 0; i < selects.length; i++) {
-    selects[i].onchange = select_func;
-  }
-
-  update_total_correct();
-}
-
-</script>
-
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom"></div>

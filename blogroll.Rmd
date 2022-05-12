@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-* [R-bloggers](https://www.r-bloggers.com/): https://www.r-bloggers.com/
-* [Statistical Modeling, Causal Inference, and Social Science](https://statmodeling.stat.columbia.edu/) (Andrew Gelman et al.): https://statmodeling.stat.columbia.edu/
-* [Armchair Ecology](https://armchairecology.blog/): https://armchairecology.blog/
+
+* [**R-bloggers**](https://www.r-bloggers.com/): https://www.r-bloggers.com/
+* [**Statistical Modeling, Causal Inference, and Social Science**](https://statmodeling.stat.columbia.edu/) (Andrew Gelman et al.): https://statmodeling.stat.columbia.edu/
+* [**Armchair Ecology**](https://armchairecology.blog/): https://armchairecology.blog/
