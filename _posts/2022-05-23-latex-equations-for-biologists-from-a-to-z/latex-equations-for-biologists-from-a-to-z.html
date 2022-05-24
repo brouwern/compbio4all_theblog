@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -87,37 +88,37 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Understanding the evolutionary history of a gene with phylogenetic trees</title>
+  <title>Latex equations for biologists from A to Z</title>
 
-  <meta property="description" itemprop="description" content="An outline of why and how to build evolutionary trees."/>
+  <meta property="description" itemprop="description" content="From &quot;density dependent growth&quot; to &quot;matrix population model&quot;."/>
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-05-11"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-05-11"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-05-23"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-05-23"/>
   <meta name="article:author" content="Nathan L. Brouwer"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Understanding the evolutionary history of a gene with phylogenetic trees"/>
+  <meta property="og:title" content="Latex equations for biologists from A to Z"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="An outline of why and how to build evolutionary trees."/>
+  <meta property="og:description" content="From &quot;density dependent growth&quot; to &quot;matrix population model&quot;."/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Understanding the evolutionary history of a gene with phylogenetic trees"/>
-  <meta property="twitter:description" content="An outline of why and how to build evolutionary trees."/>
+  <meta property="twitter:title" content="Latex equations for biologists from A to Z"/>
+  <meta property="twitter:description" content="From &quot;density dependent growth&quot; to &quot;matrix population model&quot;."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Understanding the evolutionary history of a gene with phylogenetic trees"]},{"type":"character","attributes":{},"value":["An outline of why and how to build evolutionary trees.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Nathan L. Brouwer"]}]}]},{"type":"character","attributes":{},"value":["2022-05-11"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Latex equations for biologists from A to Z"]},{"type":"character","attributes":{},"value":["From \"density dependent growth\" to \"matrix population model\".\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Nathan L. Brouwer"]}]}]},{"type":"character","attributes":{},"value":["2022-05-23"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["rocMSA.png","shroomMSA.png","shroomTREE.png","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/anchor-4.2.2/anchor.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/bowser-1.9.3/bowser.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/distill-2.2.21/template.v2.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/header-attrs-2.11/header-attrs.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.min.map","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/popper-2.6.0/popper.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy-bundle.umd.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy-light-border.css","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.css","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.umd.min.js","understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["latex-equations-for-biologists-from-a-to-z_files/anchor-4.2.2/anchor.min.js","latex-equations-for-biologists-from-a-to-z_files/bowser-1.9.3/bowser.min.js","latex-equations-for-biologists-from-a-to-z_files/distill-2.2.21/template.v2.js","latex-equations-for-biologists-from-a-to-z_files/header-attrs-2.14/header-attrs.js","latex-equations-for-biologists-from-a-to-z_files/jquery-3.6.0/jquery-3.6.0.js","latex-equations-for-biologists-from-a-to-z_files/jquery-3.6.0/jquery-3.6.0.min.js","latex-equations-for-biologists-from-a-to-z_files/jquery-3.6.0/jquery-3.6.0.min.map","latex-equations-for-biologists-from-a-to-z_files/popper-2.6.0/popper.min.js","latex-equations-for-biologists-from-a-to-z_files/tippy-6.2.7/tippy-bundle.umd.min.js","latex-equations-for-biologists-from-a-to-z_files/tippy-6.2.7/tippy-light-border.css","latex-equations-for-biologists-from-a-to-z_files/tippy-6.2.7/tippy.css","latex-equations-for-biologists-from-a-to-z_files/tippy-6.2.7/tippy.umd.min.js","latex-equations-for-biologists-from-a-to-z_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -429,10 +430,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1264,6 +1261,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
           return "<p>" + $('#ref-' + ref).html() + "</p>";
@@ -1278,6 +1281,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1377,6 +1405,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1399,7 +1429,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -1438,16 +1468,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/header-attrs-2.11/header-attrs.js"></script>
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/popper-2.6.0/popper.min.js"></script>
-  <link href="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/anchor-4.2.2/anchor.min.js"></script>
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/bowser-1.9.3/bowser.min.js"></script>
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees_files/distill-2.2.21/template.v2.js"></script>
+  <script src="latex-equations-for-biologists-from-a-to-z_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="latex-equations-for-biologists-from-a-to-z_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="latex-equations-for-biologists-from-a-to-z_files/popper-2.6.0/popper.min.js"></script>
+  <link href="latex-equations-for-biologists-from-a-to-z_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="latex-equations-for-biologists-from-a-to-z_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="latex-equations-for-biologists-from-a-to-z_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="latex-equations-for-biologists-from-a-to-z_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="latex-equations-for-biologists-from-a-to-z_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="latex-equations-for-biologists-from-a-to-z_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="latex-equations-for-biologists-from-a-to-z_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -1459,7 +1489,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Understanding the evolutionary history of a gene with phylogenetic trees","description":"An outline of why and how to build evolutionary trees.","authors":[{"author":"Nathan L. Brouwer","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-11T00:00:00.000-04:00","citationText":"Brouwer, 2022"}
+{"title":"Latex equations for biologists from A to Z","description":"From \"density dependent growth\" to \"matrix population model\".","authors":[{"author":"Nathan L. Brouwer","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-05-23T00:00:00.000-04:00","citationText":"Brouwer, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1469,161 +1499,292 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Understanding the evolutionary history of a gene with phylogenetic trees</h1>
+<h1>Latex equations for biologists from A to Z</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>An outline of why and how to build evolutionary trees.</p></p>
+<p><p>From “density dependent growth” to “matrix population
+model”.</p></p>
 </div>
 
 <div class="d-byline">
   
   Nathan L. Brouwer
   
-<br/>2022-05-11
+<br/>2022-05-23
 </div>
 
 <div class="d-article">
-<p>The study of biology span a remarkable range of scales, from biochemical interactions at the scale of individual molecules to the functioning of the entire earth. Despite this range, three tools play an important role across many of these scales:</p>
-<ol type="1">
-<li><strong>Databases</strong> of DNA and protein sequences<br />
-</li>
-<li><strong>Alignments</strong> of sequence data</li>
-<li><strong>Phylogenetic trees</strong> depicting evolutionary relationships</li>
-</ol>
-<p>These three are interrelated, because alignments are built from DNA and protein sequences obtained from databases, and most phylogenetic trees are now built from sequence data, typically organized as a <strong>multiple sequence alignment (MSA)</strong>.</p>
-<p>Biochemists and molecular biologists use these tools to understand and predict the function of proteins. For example, in the late 1990s researcher Jeffrey Hildebrand identified a protein that played a key roll in the development of vertebrate central nervous systems (<a href="https://www.sciencedirect.com/science/article/pii/S0092867400815378">Hildebrand and Soriano 1999</a>). He named the gene and protein “shroom” because when mutated the brain and skull of mice failed to form properly and bloomed out the back of their head like a fungus.</p>
-<p>Hildebrand determined the amino acid sequence of the protein and queried a database of DNA and protein sequences to see if <em>shroom</em> had ever been studied before. It had in frogs, but its function was somewhat mis-characterized. Over the last 20 years, Dr. Hildebrand and other researchers have shown that shroom occurs in many organisms and plays a central role in key stages of early development prior to birth, from the formation of fruit fly wings to proper formation of the spinal cord and central nervous system. Recently, researchers have associated mutations in shroom to the incidence of the developmental disorder <a href="https://www.cdc.gov/ncbddd/spinabifida/facts.html#:~:text=Spina%20bifida%20is%20a%20condition,not%20close%20all%20the%20way">spina bifida</a> (<a href="https://link.springer.com/article/10.1007/s00439-017-1864-x">Chen et al. 2018</a>, <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/cge.13804?casa_token=tL5doP9UXF8AAAAA%3AdouI80akWyKA-F7Td6RNtCt_EhN8lvMmqqXZp9Z8X2_N1VnjwbreUgzsBV_ufEgcJfRUOOsLSub3UMA">Deshwar et al. 2020</a>).</p>
-<p>Sequence databases play a key roll throughout this research for identifying other organisms that have the shroom gene (<a href="https://bmcmolcellbiol.biomedcentral.com/articles/10.1186/1471-2121-7-18">Hagens et al. 2006</a>). Indeed, the Hildebrand lab has leveraged the occurrence of shroom in fruit flies to study what shroom does at the cellular level, determine the role of the different variants of the shroom gene and proteins that occur in many organisms (<a href="https://anatomypubs.onlinelibrary.wiley.com/doi/full/10.1002/dvdy.22326?casa_token=QaKkh-Gpj30AAAAA%3AJc4Ec-f13P2mseiOO1Cf0ib4Lqb7uoMuQ366d1sMjGrGMAjjxhdS_u580z2IZJ6wX_cqXQn_LssC31I">Bolinger et al. 2010</a>), and identify what other proteins <em>shroom</em> interacts with (<a href="https://journals.biologists.com/bio/article/10/2/bio055640/222728/A-modifier-screen-identifies-regulators-of">Hildebrand et al. 2021</a>).</p>
-<p>Multiple sequence alignments are often used to identify the parts of proteins that are likely involved in key functions, such as binding to other proteins or carrying out chemical reactions (e.g. <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081075">Mohan, Hildebrand et al. 2013</a>). This information can then be used when interpreting results from experiments or designing studies that mutate part of a protein to change its effect or prevent it from being created entirely.</p>
+<p>I’m working on a book project called “<a
+href="https://bio.libretexts.org/Courses/Gettysburg_College/01%3A_Ecology_for_All">Ecology
+For All!</a>” and spending a lot of time writing equations in latex. I
+write up equations like this maybe once a year and have to review every
+time what to do, and spend time knocking the code around to get what I
+want.</p>
+<p>There are many good introductions to Latex and Latex equations out
+there. Below, I present just a working list of common equations in
+biology.</p>
+<h2 id="a-very-brief-primer-of-latex-equations">A very brief primer of
+Latex equations</h2>
+<p>There are two ways to present Latex equation: <strong>inline</strong>
+and <strong>display</strong>. Inline equations appear in a line of
+normal text, like this: <span class="math inline">\(\lambda =
+\frac{N_{t+1}}{N_t}\)</span>. Display mode equations appear on a
+separate line:</p>
+<p><span class="math display">\[\lambda =
+\frac{N_{t+1}}{N_t}\]</span></p>
+<p>The only difference between inline and display markdown up is the
+inline is preceded by <code>\(</code> and closed by <code>\)</code>,
+while display mode is preceded by <code>\[</code> and closed by
+<code>\]</code>.</p>
+<p>In an Rmarkdown document inline equations can therefore be included
+like this:</p>
+<p>text text text<code>\(\lambda = \frac{N_{t+1}}{N_t}\)</code> text
+text</p>
+<p>This will be rendered as</p>
+<p>text text text <span class="math inline">\(\lambda =
+\frac{N_{t+1}}{N_t}\)</span> text text.</p>
+<p>Display equation are written like this:</p>
+<p>some text</p>
+<p><code>\[\lambda = \frac{N_{t+1}}{N_t}\]</code></p>
+<p>some more text</p>
+<h2 id="latex-equations-a-to-z">Latex equations A to Z</h2>
+<h2 id="b">B</h2>
+<h3 id="beta-coefficients-for-linear-regression">Beta coefficients for
+linear regression</h3>
+<p>Inline: <span class="math inline">\(y_i = \beta_0 +
+\beta_1*x_i\)</span></p>
+<p>Inline: <code>\(y_i = \beta_0 + \\beta_1*x_i\)</code></p>
+<p>Solo:</p>
+<p><span class="math display">\[y_i = \beta_0 + \beta_1*x_i\]</span></p>
+<p><code>\[y_i = \beta_0 + \beta_1*x_i\]</code></p>
+<h2 id="d">D</h2>
+<h3 id="density-dependent-population-growth">Density dependent
+population growth</h3>
+<h2 id="e">E</h2>
+<h3 id="exponential-growth">Exponential growth</h3>
+<h2 id="f">F</h2>
+<h3 id="fractions">Fractions</h3>
+<p>Inline basic: <span class="math inline">\(\frac{x}{y}\)</span></p>
+<p>Inline example: <span
+class="math inline">\(\frac{N_{t+1}}{N_t}\)</span></p>
+<p>Solo:</p>
+<p><span class="math display">\[\frac{x}{y}\]</span></p>
+<p><span class="math display">\[\frac{N_{t+1}}{N_t}\]</span></p>
+<h3 id="formatting">Formatting</h3>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="rocMSA.png" alt="Alignment of focal part of the protein Rock1, which binds shroom.  Mohan et al. 2013 https://doi.org/10.1371/journal.pone.0081075.  CC-BY" width="540" />
-<p class="caption">
-Figure 1: Alignment of focal part of the protein Rock1, which binds shroom. Mohan et al. 2013 <a href="https://doi.org/10.1371/journal.pone.0081075" class="uri">https://doi.org/10.1371/journal.pone.0081075</a>. CC-BY
-</p>
-</div>
-</div>
-<p>Phylogenetic trees can be built from multiple sequence alignments to visualize the evolutionary relationships among genes.</p>
-<p>TODO: insert phylogeny</p>
-<div class="layout-chunk" data-layout="l-body">
-<p><img src="shroomTREE.png" width="770" /></p>
-</div>
-<p>In subsequent posts, I will present a workflow for obtaining sequences, building an MSA, and creating a phylogenetic tree of the shroom gene family. Many biologist will use web-browser based tools and GUI software such as MEGA to do this (<a href="https://academic.oup.com/bib/article/9/4/299/267027?login=true">Kumar et al. 2008</a>); we’ll do this all in a reproducible and extensible way in R.</p>
-<p>We will proceed through the following steps:</p>
-<ol type="1">
-<li>Starting with a set of published shroom gene identification numbers <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081075">Mohan, Hildebrand et al. 2013</a>, we’ll download shroom sequences using the rentrez package (<a href="https://peerj.com/preprints/3179/">Winter 2017</a>.</li>
-<li>We’ll then clean up the data a bit and explore alignments between pairs of sequences using pairwise alignments, thanks to the <a href="https://bioconductor.org/packages/release/bioc/html/Biostrings.html">Biostrings</a> package.</li>
-<li>Next, we’ll build a full multiple sequence alignment using (<a href="https://academic.oup.com/bioinformatics/article/31/24/3997/197486?login=true">Bodenhofer et al. 2015</a>).</li>
-<li>We’ll visualize a focal section of our shroom MSA using the ggplot2 extension <a href="http://yulab-smu.top/ggmsa/articles/ggmsa.html#:~:text=ggmsa%20is%20a%20package%20designed,R%20extremely%20simple%20and%20powerful">ggmsa</a>.</li>
-<li>Finally, we’ll build a phylogenetic tree with the <a href="https://cran.r-project.org/web/packages/ape/index.html">ape</a> package.</li>
-</ol>
-<p>After this series of blog posts is complete, future posts will provide more details about the biological, computational, and R programming aspects of these methods.</p>
-<strong>Table 1</strong>: shroom sequence identification codes (accession numbers) from <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0081075">Mohan, Hildebrand et al. 2013</a>.
-<div class="layout-chunk" data-layout="l-body">
-<table style="width:86%;">
+<table style="width:72%;">
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 34%" />
-<col style="width: 16%" />
-<col style="width: 18%" />
+<col style="width: 27%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">accession</th>
-<th style="text-align: center;">name.orig</th>
-<th style="text-align: center;">name.new</th>
-<th style="text-align: center;">spp</th>
+<th style="text-align: center;">Format</th>
+<th style="text-align: center;">Inline Latex</th>
+<th style="text-align: center;">Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">CAA78718</td>
-<td style="text-align: center;">X. laevis Apx</td>
-<td style="text-align: center;">xShroom1</td>
-<td style="text-align: center;">Xenopus</td>
+<td style="text-align: center;">Exponent</td>
+<td style="text-align: center;"><code>\(e^x\)</code></td>
+<td style="text-align: center;"><span
+class="math inline">\(e^x\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">NP_597713</td>
-<td style="text-align: center;">H. sapiens APXL2</td>
-<td style="text-align: center;">hShroom1</td>
-<td style="text-align: center;">Homo</td>
+<td style="text-align: center;">Subscript-simple</td>
+<td style="text-align: center;"><code>\(N_t\)</code></td>
+<td style="text-align: center;"><span
+class="math inline">\(N_t\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">CAA58534</td>
-<td style="text-align: center;">H. sapiens APXL</td>
-<td style="text-align: center;">hShroom2</td>
-<td style="text-align: center;">Homo</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">ABD19518</td>
-<td style="text-align: center;">M. musculus Apxl</td>
-<td style="text-align: center;">mShroom2</td>
-<td style="text-align: center;">Mus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">AAF13269</td>
-<td style="text-align: center;">M. musculus ShroomL</td>
-<td style="text-align: center;">mShroom3a</td>
-<td style="text-align: center;">Mus</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">AAF13270</td>
-<td style="text-align: center;">M. musculus ShroomS</td>
-<td style="text-align: center;">mShroom3b</td>
-<td style="text-align: center;">Mus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">NP_065910</td>
-<td style="text-align: center;">H. sapiens Shroom</td>
-<td style="text-align: center;">hShroom3</td>
-<td style="text-align: center;">Homo</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">ABD59319</td>
-<td style="text-align: center;">X. laevis Shroom-like</td>
-<td style="text-align: center;">xShroom3</td>
-<td style="text-align: center;">Xenopus</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">NP_065768</td>
-<td style="text-align: center;">H. sapiens KIAA1202</td>
-<td style="text-align: center;">hShroom4a</td>
-<td style="text-align: center;">Homo</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">AAK95579</td>
-<td style="text-align: center;">H. sapiens SHAP-A</td>
-<td style="text-align: center;">hShroom4b</td>
-<td style="text-align: center;">Homo</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">ABA81834</td>
-<td style="text-align: center;">D. melanogaster Shroom</td>
-<td style="text-align: center;">dmShroom</td>
-<td style="text-align: center;">Drosophila</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">EAA12598</td>
-<td style="text-align: center;">A. gambiae Shroom</td>
-<td style="text-align: center;">agShroom</td>
-<td style="text-align: center;">mosquito</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">XP_392427</td>
-<td style="text-align: center;">A. mellifera Shroom</td>
-<td style="text-align: center;">amShroom</td>
-<td style="text-align: center;">bee</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">XP_783573</td>
-<td style="text-align: center;">S. purpuratus Shroom</td>
-<td style="text-align: center;">spShroom</td>
-<td style="text-align: center;">sea urchin</td>
+<td style="text-align: center;">Subscript-complex</td>
+<td style="text-align: center;"><code>\(N_{t+1}\)</code></td>
+<td style="text-align: center;"><span
+class="math inline">\(N_{t+1}\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="g">G</h2>
+<h3 id="geometric-growth">Geometric growth</h3>
+<h3 id="greek-symbols">Greek symbols</h3>
+<p>Greek symbols are invoked via their name, preceded by a slash. <span
+class="math inline">\(\alpha\)</span> is therefore genereated via
+<code>\(\alpha\)</code>. Uppercase, when different than the Enlighs
+equivalent, are generated by capitalizing the Greek name: <span
+class="math inline">\(\Gamma\)</span> is therefore generated via
+<code>\(\Gamma\)</code>. When the uppercase Greek and English are the
+same the markup for normal text within an equation is used:
+<code>\\(\\textrm{Z}\\)</code> yields uppercase Zeta, which is just
+<span class="math inline">\(\textrm{Z}\)</span>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 19%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">lower-case symbol</th>
+<th style="text-align: center;">upper-case symbol</th>
+<th style="text-align: center;">lower-case Latex</th>
+<th style="text-align: center;">upper-case Latex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">alpha</td>
+<td style="text-align: center;"><span
+class="math inline">\(\alpha\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\textrm{A}\)</span></td>
+<td style="text-align: center;"><code>\(\alpha\)</code></td>
+<td style="text-align: center;"><code>\(\textrm{A}\)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">beta</td>
+<td style="text-align: center;"><span
+class="math inline">\(\beta\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\textrm{B}\)</span></td>
+<td style="text-align: center;"><code>\(\beta\)</code></td>
+<td style="text-align: center;"><code>\(\textrm{B}\)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">gamma</td>
+<td style="text-align: center;"><span
+class="math inline">\(\gamma\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\Gamma\)</span></td>
+<td style="text-align: center;"><code>\(\gamma\)</code></td>
+<td style="text-align: center;"><code>\(\Gamma\)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">delta</td>
+<td style="text-align: center;"><span
+class="math inline">\(\delta\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\Delta\)</span></td>
+<td style="text-align: center;"><code>\(\delta\)</code></td>
+<td style="text-align: center;"><code>\(\Delta\)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">epsilon</td>
+<td style="text-align: center;"><span
+class="math inline">\(\epsilon\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\textrm{E}\)</span></td>
+<td style="text-align: center;"><code>\(\epsilon\)</code></td>
+<td style="text-align: center;"><code>\(\textrm{E}\)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">zeta</td>
+<td style="text-align: center;"><span
+class="math inline">\(\zeta\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\textrm{Z}\)</span></td>
+<td style="text-align: center;"><code>\(\zeta\)</code></td>
+<td style="text-align: center;"><code>\(\textrm{Z}\)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">lambda</td>
+<td style="text-align: center;"><span
+class="math inline">\(\lambda\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\textrm{L}\)</span></td>
+<td style="text-align: center;"><code>\(\lambda\)</code></td>
+<td style="text-align: center;"><code>\(\textrm{L}\)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">mu</td>
+<td style="text-align: center;"><span
+class="math inline">\(\mu\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\textrm{M}\)</span></td>
+<td style="text-align: center;"><code>\(\mu\)</code></td>
+<td style="text-align: center;"><code>\(\textrm{M}\)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">sigma</td>
+<td style="text-align: center;"><span
+class="math inline">\(\sigma\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\Sigma\)</span></td>
+<td style="text-align: center;"><code>\(\sigma\)</code></td>
+<td style="text-align: center;"><code>\(\Sigma\)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">phi</td>
+<td style="text-align: center;"><span
+class="math inline">\(\phi\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\Phi\)</span></td>
+<td style="text-align: center;"><code>\(\phi\)</code></td>
+<td style="text-align: center;"><code>\(\Phi\)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">chi</td>
+<td style="text-align: center;"><span
+class="math inline">\(\chi\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\textrm{X}\)</span></td>
+<td style="text-align: center;"><code>\(\chi\)</code></td>
+<td style="text-align: center;"><code>\(\textrm{X}\)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">psi</td>
+<td style="text-align: center;"><span
+class="math inline">\(\psi\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\Psi\)</span></td>
+<td style="text-align: center;"><code>\(\psi\)</code></td>
+<td style="text-align: center;"><code>\(\Psi\)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="i">I</h2>
+<h3 id="identity-matrix">Identity matrix</h3>
+<p><span class="math display">\[\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix}\]</span></p>
+<p><span class="math display">\[\boldsymbol{I} = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix}\]</span></p>
+<p>Note: the use of <code>boldsymbol{}</code> to get the bold I may be
+outmoded or otherwise problematic.</p>
+<h2 id="l">L</h2>
+<h3 id="lambda">Lambda</h3>
+<p>Inline basic: <span class="math inline">\(\lambda\)</span></p>
+<p>Inline example: <span class="math inline">\(\lambda =
+\frac{N_{t+1}}{N_t}\)</span></p>
+<p>Solo:</p>
+<p><span class="math display">\[\lambda\]</span></p>
+<p><span class="math display">\[\lambda =
+\frac{N_{t+1}}{N_t}\]</span></p>
+<h3 id="linear-model">Linear model</h3>
+<h3 id="logistic-growth">Logistic growth</h3>
+<h2 id="m">M</h2>
+<h3 id="matrix-model">Matrix model</h3>
+<p><span class="math display">\[\begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; 4
+\end{bmatrix}\]</span></p>
+<p><span class="math display">\[\begin{bmatrix}
+1 &amp; 2 &amp; 3\\
+4 &amp; 5 &amp; 6\\
+7 &amp; 8 &amp; 9
+\end{bmatrix}\]</span></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1631,6 +1792,15 @@ Figure 1: Alignment of focal part of the protein Rock1, which binds shroom. Moha
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

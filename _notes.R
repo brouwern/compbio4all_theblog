@@ -13,7 +13,7 @@ rmarkdown::render_site(encoding = 'UTF-8')
 
 # new post
 distill::create_post(
-  title = "Downloading protein and DNA sequences with the `entrez` package", # mandatory
+  title = "Latex equations for biologists from A to Z", # mandatory
   author = "Nathan L. Brouwer",
   slug = "auto", # generates a website slug (URL)
   date_prefix = TRUE, # adds date for sorting

@@ -16,8 +16,8 @@ navbar:
       href: about.html
     - text: "Blogroll"
       href: blogroll.html
-    - icon: fa fa-rss
-      href: index.xml
+    # - icon: fa fa-rss
+    #   href: index.xml
 rss:
   full_content: true
     # categories:

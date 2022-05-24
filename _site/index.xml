@@ -7,24 +7,22 @@
     <description>Computational Biology for All!  A blog for those learning &amp; teaching computational biology &amp; bioinformatics.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 12 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Downloading protein and DNA sequences with the rentrez package</title>
+      <title>Latex equations for biologists from A to Z</title>
       <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-12-downloading-protein-and-dna-sequences-with-the-rentrez-package</link>
-      <description>`rentrez` is a fast and easy way to access biological sequence databases.</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-12-downloading-protein-and-dna-sequences-with-the-rentrez-package</guid>
-      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://compbio4all.netlify.app/posts/2022-05-12-downloading-protein-and-dna-sequences-with-the-rentrez-package/US-NLM-NCBI-Logo2.png" medium="image" type="image/png" width="200" height="247"/>
+      <link>https://compbio4all.netlify.app/posts/2022-05-23-latex-equations-for-biologists-from-a-to-z</link>
+      <description>From "density dependent growth" to "matrix population model".</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-23-latex-equations-for-biologists-from-a-to-z</guid>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Understanding the evolutionary history of a gene with phylogenetic trees</title>
+      <title>Welcome to Computational Biology for All!</title>
       <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-11-understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees</link>
-      <description>An outline of why and how to build evolutionary trees.</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-11-understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees</guid>
-      <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://compbio4all.netlify.app/posts/2022-05-11-understanding-the-evolutionary-history-of-a-gene-with-phylogenetic-trees/rocMSA.png" medium="image" type="image/png" width="1080" height="504"/>
+      <link>https://compbio4all.netlify.app/posts/2022-05-05-welcome-to-computational-biology-for-all</link>
+      <description>Welcome to my new blog, Computational Biology for All!</description>
+      <guid>https://compbio4all.netlify.app/posts/2022-05-05-welcome-to-computational-biology-for-all</guid>
+      <pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
