@@ -18,6 +18,10 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r}
+knitr::include_graphics("asciiworld.png")
+```
+
 
 Welcome to **Computational Biology for All**.  This blog is dedicated to introducing and explaining quantitative methods to biologists.  Topics will include:
 

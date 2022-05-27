@@ -1,5 +1,73 @@
 [
   {
+    "path": "posts/2022-05-25-my-package-building-workflow/",
+    "title": "My package-building workflow",
+    "description": "How I build packages",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-25",
+    "categories": [],
+    "contents": "\nIntroduction\nI principally use packages to bundle up datasets and small functions\nfor using while teaching.\nThe following code outlines the key steps I use to set up the\nframework for a package, principally using the usethis\npackage. I build a website for the package using\npackagedown.\nPackages\nI use these packages for setting things up\n\n\n\nCreate repository usig\nGitHub\nI create the git repo via the GitHub website: https://github.com/brouwern/compbio4all.git\nAssociate\nworking directory with repo via RStudio\nClone into the repo by hand by creating an RStudio Project: New\nproject / New repro / etc\nSet up package with usethis\nI then use usethis::create_package() within my project directory to\nbuild the basic package infrastructure This overwrites the initial\nproject (after a handy prompt in the console).\n\n\n\nCreate vignette\ninfrastructure\nI create vignette infrastructure and dummy vignette\n\n\n\nI then write my vignettes using this template and change the file\nname. I use “a)”, “b)”, “c)” as a prefix on my vignettes so that show up\nin order when the website is rendered using\npackagedown.\nCopy in package-making\nscripts\nI copy this script and related ones for maintaining the package into\nthe vignettes folder.\nCreate “readme” and “news”\nfiles\n\n\n\nPopulating the readme file\nThe readme shows up on the GitHub landing page and so\nremember to fill out relevant information such as use-cases there.\nI add basic information to the readme fill and add sample code for a\ncall to devtools::install_github() to install the package. The chunk\nbelow is an example:\n\n\n\n\n\n\n\n\n\nCreate git ignore\nAdd typical files to gitignore: ‘.Rproj.user’, ‘.Rhistory’, ‘.Rdata’,\n‘.DS_Store’\n\n\n\nI always have trouble with gitingore and haven’t taken\nthe time to learn more about it. I am not sure how to use this properly\nyet.\n\n\n\nAdd required packages\nThese are the packages I typically use. I should vectorize this so it\nwould look nicer : )\n\n\n\nDon’t save/load\nuser workspace between sessions\n\n\n\nUse roxygen for\ndocumentation\nWhere would we be without roxygen for writing documentation\nfiles?!?\n\n\n\nPackage-level documents\n“Adds a dummy .R file that will prompt roxygen to generate basic\npackage-level documentation.”\n\n\n\nUse pkgdown\nFor making a handy front end website that displays documentation and\nvignettes for the package.\n\n\n\nSet up data\nCreate folder for external data.\nR packages often have a folder called /inst which stands\nfor “installed.” This folder is usually for miscellaneous files\nassociated with the package. This includes external data\n(/extdata) such as .csv files.\n\n\n\nLook at any data in my\nextdata file\nExternal data is stored in “/inst/extdata”\n\n\n\nRaw data\nI copy raw data files into the /inst/extdata.\nRaw data prep\nIf there are any data processing steps that I don’t want to include\nin the vignettes I put them into the directory\npackagename/data-raw. This structure for this directory and\ndata prep script can be made using use_data_raw()\n\n\n\nLicense\nFor good information on licenses see Karl Broman’s blog: http://kbroman.org/pkg_primer/pages/licenses.html\nPlain text versions of licenses can be found at https://creativecommons.org/2011/04/15/plaintext-versions-of-creative-commons-licenses-and-cc0/\n\n\n\nAn error can occur if you have a separate license file. eg\n\nFile LICENSE is not mentioned in the DESCRIPTION file.\n\nThis can be fixed by changing the description from “License: GPL-3”\nto “License: GPL-3 + file LICENSE”\nhttp://r-pkgs.had.co.nz/description.html#license\nSpell check\nI usually spell check as I go - and I always need it! You can add\nspell checking as a unit test using use_spell_check()\nDocumenting datasets\nAll data sets must be documented.\n\n\n\nA minimal R dataset .R file looks like this\n\n\n\nA standard R dataset .R file looks like this (https://r-pkgs.org/data.html)\n\n\n\nTo do list\nTo do once a package is made, the following things needs to be\nupdated\nPush stuff to git\nAdd info to the readme, such as basic use case\nAdd info to license\nOther potentially\nuseful usethis functions\nuse_r() Create or edit a .R file\nuse_build_ignore() Add files to .Rbuildignore\nuse_version() use_dev_version() Increment package version\nedit_r_profile()\nedit_r_environ()\nedit_r_makevars()\nedit_rstudio_snippets()\nedit_git_config()\nedit_git_ignore()\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-05-25T11:08:43-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2022-05-25-my-package-maintenance-workflow/",
+    "title": "My package-maintenance workflow",
+    "description": "The key functions used to maintain a package.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-25",
+    "categories": [],
+    "contents": "\nIntroduction\nThis code is used to build, re-build, and trouble shoot the building\nof the package, including\nBuilding/compiling different components\nBuilding the pkgdown website\nThese are mostly commands that can be launched from within RStudio\nvia the GUI, except pkgdown::build_site(). However, its useful to know\nwhat they are doing and why they are run. It also can be helpful when\nthings are running smoothly to put everything into a script so things\ncan be run en-masse\ndevtools functions\n\n\n\nClean vignettes\n“This uses a fairly rudimentary algorithm where any files in\n‘inst/doc’ with a name that exists in ‘vignettes’ are removed.”\n\n\n\nBuild vignettes\n“Builds package vignettes using the same algorithm that R CMD build\ndoes”\n\n\n\nBuild documentation\ndocument()\n\n\n\nLoad all\n\n\n\nCheck\n\n\n\ncheck_failures\npckgdown functions\nBuild package down website\nSingle function to build whole site: “This will generate a docs/\ndirectory. The home page will be generated from your package’s\nREADME.md, and a function reference will be generated from the\ndocumentation in the man/ directory.”\n\n\n\n\n\n\nBuild piece by piece\n\n\n\n– Initializing site\n\n\n\nBuilding home\n\n\n\nBuilding function reference\n\n\n\nBuild vignettes\n\n\n\n\n\n\nExplore dependencies\n\n\n\nBuild pdf manual\nhttps://stackoverflow.com/questions/16986422/r-create-reference-manual-with-r-cmd-check\nR CMD Rd2pdf mypackage\nhttps://stackoverflow.com/questions/30607496/making-an-r-package-pdf-manual-using-devtools\n\n\n\nremove manual\n\n\n\n\n\n\nKeep logs files (?)\n\n\n\nRcmd.exe\n“Clean and rebuild” ==> Rcmd.exe INSTALL –preclean –no-multiarch\n–with-keep.source mammalsmilk\n“Install restart” ==> Rcmd.exe INSTALL –no-multiarch\n–with-keep.source mammalsmilk\n\n\n\ndevtools::check()\nSee\n‘C:/Users/lisanjie/Documents/1_R/git/git-aviary/FACavian.Rcheck/00install.out’\nfor details. Information on the location(s) of code generating the\n‘Note’s can be obtained by re-running with environment variable\nR_KEEP_PKG_SOURCE set to ’yes’.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-05-25T11:06:30-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2022-05-24-key-parts-of-my-distill-blog-workflow/",
+    "title": "Key parts of my distill blog workflow",
+    "description": "Or, \"the stuff I always forget\".",
+    "author": [
+      {
+        "name": "Nathan L,Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-24",
+    "categories": [],
+    "contents": "\nCreate a new post\nThis create the infrastructure for a post and and .Rmd with a basic\nYAML header”.”, Additional things can be added to the header (see\nbelow).\n\n\n\nYAML headers for posts\n\n\n\nInclude images\nI put the images in the same folder as the .Rmd file for the post”.”,\nIf you don’t include an image at the top of the .Rmd,distill will grab\nthe the first figure from the post,if one is generated.\n\n\n\nCropping images\nThe magick package is very useful for working with\nimages.\n\n\n\nAscii art\nThe logo I’m playing with\nhttps://ascii.co.uk/art/world Brice Wellington from\nWinston Smith\n\n\n\nThis looks fun but isn’t currently working for me.\n\n\n\nBrice Wellington from Winston Smith https://ascii.co.uk/art/world\nBuild the site\n\n\n\nKey resources\nhttps://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/\nhttps://rstudio.github.io/distill/blog_workflow.html\n\n\n\n",
+    "preview": "posts/2022-05-24-key-parts-of-my-distill-blog-workflow/Aurora_consurgens_zurich_044_f-21v-44_dragon-pot.jpeg",
+    "last_modified": "2022-05-25T11:07:53-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/2022-05-23-forget-irises-hello-amino-acids/",
+    "title": "Forget irises, Hello Amino Acids!",
+    "description": "A biologist-friendly dataset for multivariate data exploration.",
+    "author": [
+      {
+        "name": "Nathan L. Brouwer",
+        "url": {}
+      }
+    ],
+    "date": "2022-05-23",
+    "categories": [],
+    "contents": "\n\n\n\n\n\n\n\n\n\nMust. Have. Data.\nOne of the biggest challenges when learning and teaching R is finding\ngood datasets to work with. There are a number of classic datasets in\nstatistics and data science that have useful features, and they tend to\nget used again and again. And again and again and again…\nWhat is an “sepal”, anyway?\nOne of the most famous datasets in all of data-dom is the\niris Wikipedia\ndataset. It comes prepackage in base R, is a popular\nexample dataset for many blogs, and according to the UCI Machine Learning\nRepository has been used in papers >80 times.\nVariables in the data are\n\n[1] \"Sepal.Length\" \"Sepal.Width\"  \"Petal.Length\" \"Petal.Width\" \n[5] \"Species\"     \n\nWhile explaining the difference between sepals (usually green and\nclose to the stem below the flower, but not always) and petals (usually\nthe pretty part of the flower, but not always) is a great chance for\nscience outreach, I’d like to start seeing more datasets out there.\nIntroducing the aminoacids\ndataset\nOne of my favorite datasets for my biology and data-oriented classes\nare the chemical characteristics of the 20 amino acids that make up most\nproteins in, well, everything biological on the planet. All proteins,\nwhether cow, insect, or soy are long strings of amino acids. There are\n20 “cannonical”\namino acids that make up probably >99% of all amino acids in all\nproteins (but there are two some fun exceptions, selenocysteine\nand pyrrolysine\nthat get used by bending the normal rules of the genetic\ncode).\n\n\n\nThis dataset originates from Higgs\nand Attwood (2005), and was expanded in (Higgs (2009))[https://link.springer.com/article/10.1186/1745-6150-4-16].\nI’ve added some additional categorical variables based on typical\nclassifications used in textbooks.\nUses\nHiggs and Attwood (2005) use these data to demonstrate several\ntechniques:\nPrincipal components analysis (PCA)\nDistance metrics and distance matrices\nClustering with UPGMA and k-means.\nHeatmaps\nThe dataset and a related one are used by Higgs in several\npublications exploring the evolution of the structure of genetic code,\ne.g. Higgs\n(2009), Higgs\nand Pudritz (2009).\nI use the dataset for these purposes, as well as scatterplots,\nscatterplot matrices, correlations, correlation matrices, and 3D\nplots.\nGetting to know the data\nThis exert shows the basic structure of the data:\n\n  aa  MW vol rbulk   pol  IEP phob1 phob2 saaw faal polreq freq\n1  A  89  67 11.50  0.00 6.00   1.8   1.6  113 0.74    7.0 7.80\n2  C 121  86 13.46  1.48 5.07   2.5   2.0  140 0.91    4.8 1.10\n3  D 133  91 11.68 49.70 2.77  -3.5  -9.2  151 0.62   13.0 5.19\n4  E 146 109 13.57 49.90 3.22  -3.5  -8.2  183 0.62   12.5 6.72\n5  F 165 135 19.80  0.35 5.48   2.8   3.7  218 0.88    5.0 4.39\n\nThere is one row for each of the 20 amino acids, and each column is\neither a numeric or categorical variable describing its chemistry. The\ncategorical variables are all based on the numeric ones.\nEach of the 20 amino acid has a 1-letter code\n\n [1] \"A\" \"C\" \"D\" \"E\" \"F\" \"G\" \"H\" \"I\" \"K\" \"L\" \"M\" \"N\" \"P\" \"Q\" \"R\" \"S\"\n[17] \"T\" \"V\" \"W\" \"Y\"\n\nSeveral famous amino acids are sleep-related tryptophan, and\nleucine, isoleucine, and valine, the “branched-chain\namino acids” used in nutritional supplements.\nSeveral of the variables describes the size of the molecule and are\nhighly correlated\nMW = molecular\nweight\nvol = volume (amount of space filled)\nrbulk = The bulkiness of the [side\nchain (“R”)[(https://en.wikipedia.org/wiki/Amino_acid#Side_chains)],\nthe part of each amino acid that makes it unique.\nsaaw = Surface area accessible to water\n\n\n\nA major chemical characteristic of molecules is how they behave in\nwater - their hydrophobicity. Hydrophobicity is\nmeasured two ways in these data, and is correlated somewhat with a third\nvariable polar requirement.\nphob1 = hydrophobicity scale 1\nphob2 = hydrophobicity scale 2\npolreq = polar rquirement scale 1\nfaal\nAn amino acids polar requirement is “a characteristic property …\ndefined by the paper chromatographic experiments of Woese and coworkers\n(Woese 1973; Woese et al. 1966a, b) in aqueous solutions of\nnucleobases.” (Mathew\nand Luthey-Schulten 2008).\n\n\n\nThe remaining two variables, polarity (pol) and isoelectric point\n(IEP) are poorly correlaed with the others. At a molecule’s [isoelectric\npoint](https://en.wikipedia.org/wiki/Isoelectric_point#:~:text=The%20isoelectric%20point%20(pI%2C%20pH,However%2C%20pI%20is%20also%20used.),\nthe pH is such that the molecules carries no net electrical charge.\nIn the plot below two other variables are included for\ncomparison.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "preview": "posts/2022-05-23-forget-irises-hello-amino-acids/Joseph_Wright_of_Derby_The_Alchemist-CROPPED.jpeg",
+    "last_modified": "2022-05-24T16:55:40-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-05-23-latex-equations-for-biologists-from-a-to-z/",
     "title": "Latex equations for biologists from A to Z",
     "description": "From \"density dependent growth\" to \"matrix population model\".",
@@ -28,9 +96,11 @@
     ],
     "date": "2022-05-05",
     "categories": [],
-    "contents": "\nWelcome to Computational Biology for All. This blog\nis dedicated to introducing and explaining quantitative methods to\nbiologists. Topics will include:\ncomputational biology\nbioinformatics\nphylogenetics\ndata science\nstatistical analysis\nsimulation\ndata visualization\nTo kick off the blog I am going to do a series outlining how to\ncarryout a common task in molecular biology, bioinformatics, and\nevolutionary biology: building a multiple\nsequence alignment and phylogenetic\ntree using protein sequences obtained from the National Institutes\nof Health’s databases.\n\n\n\n",
-    "preview": {},
-    "last_modified": "2022-05-23T09:34:03-04:00",
-    "input_file": {}
+    "contents": "\n\n\n\nWelcome to Computational Biology for All. This blog\nis dedicated to introducing and explaining quantitative methods to\nbiologists. Topics will include:\ncomputational biology\nbioinformatics\nphylogenetics\ndata science\nstatistical analysis\nsimulation\ndata visualization\nTo kick off the blog I am going to do a series outlining how to\ncarryout a common task in molecular biology, bioinformatics, and\nevolutionary biology: building a multiple\nsequence alignment and phylogenetic\ntree using protein sequences obtained from the National Institutes\nof Health’s databases.\n\n\n\n",
+    "preview": "posts/2022-05-05-welcome-to-computational-biology-for-all/asciiworld.png",
+    "last_modified": "2022-05-25T11:12:57-04:00",
+    "input_file": {},
+    "preview_width": 645,
+    "preview_height": 427
   }
 ]

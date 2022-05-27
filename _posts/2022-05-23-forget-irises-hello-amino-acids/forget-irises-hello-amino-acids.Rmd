@@ -1,0 +1,357 @@
+---
+title: "Forget irises, Hello Amino Acids!"
+description: |
+  A biologist-friendly dataset for multivariate data exploration.
+author: Nathan L. Brouwer
+date: 2022-05-23
+output:
+  distill::distill_article:
+    self_contained: false
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, echo = F, eval = F}
+img <- magick::image_read("Joseph_Wright_of_Derby_The_Alchemist-CROPPED.jpeg")
+img <- image_scale(img, "300") # width: 300px
+print(img)
+img <- image_crop(img, "300x300+100+150")
+
+image_write(img,path = "Joseph_Wright_of_Derby_The_Alchemist-CROPPED.jpeg")
+```
+
+```{r, echo = F}
+knitr::include_graphics("Joseph_Wright_of_Derby_The_Alchemist-CROPPED.jpeg")
+```
+
+
+
+
+```{r, echo = F, eval = F}
+
+# **TODO**
+# 
+# 1. Add 3-letter codes
+# 1. alternative headings / original headings from Higgs paper - easier to understand
+# 1. alternative formats of the data with different levels of detail aa, aacids, aminoacids
+# 1. side bar opportunities: "fun facts" about amino acids
+
+```
+
+## Must. Have. Data.
+
+One of the biggest challenges when learning and teaching R is finding good datasets to work with.  There are a number of classic datasets in statistics and data science that have useful features, and they tend to get used again and again.  And again and again and again...
+
+
+### What is an "sepal", anyway?
+
+One of the most famous datasets in all of data-dom is the **iris** [Wikipedia](https://en.wikipedia.org/wiki/Iris_flower_data_set) dataset.  It comes prepackage in base `R`, is a popular example dataset for many blogs, and according to the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris) has been used in papers >80 times.  
+
+Variables in the data are
+```{r,echo = F}
+names(iris)
+```
+
+While explaining the difference between sepals (usually green and close to the stem below the flower, but not always) and petals (usually the pretty part of the flower, but not always) is a great chance for science outreach, I'd like to start seeing more datasets out there.  
+
+## Introducing the aminoacids dataset
+
+One of my favorite datasets for my  biology and data-oriented classes are the chemical characteristics of the 20 amino acids that make up most proteins in, well, everything biological on the planet.  All proteins, whether cow, insect, or soy are long strings of amino acids.  There are 20 ["cannonical" amino acids](https://en.wikipedia.org/wiki/Proteinogenic_amino_acid) that make up probably >99% of all amino acids in all proteins (but there are two some fun exceptions, [selenocysteine](https://en.wikipedia.org/wiki/Selenocysteine) and [pyrrolysine](https://en.wikipedia.org/wiki/Pyrrolysine) that get used by bending the normal rules of the [genetic code](https://en.wikipedia.org/wiki/Expanded_genetic_code)).
+
+```{r, echo = F}
+aa        <-c('A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y')
+MW     <-c(89,121,133,146,165,75,155,131,146,131,149,132,115,147,174,105,119,117,204,181)
+vol    <-c(67,86,91,109,135,48,118,124,135,124,124,96,90,
+              114,148,73,93,105,163,141)
+rbulk <-c(11.5,13.46,11.68,13.57,19.8,3.4,13.69,21.4,
+              15.71,21.4,16.25,12.28,17.43,
+              14.45,14.28,9.47,15.77,21.57,21.67,18.03)
+pol  <-c(0,1.48,49.7,49.9,0.35,0,51.6,0.13,49.5,0.13,
+              1.43,3.38,1.58,3.53,52,1.67,1.66,0.13,2.1,1.61)
+IEP <-c(6,5.07,2.77,3.22,5.48,5.97,7.59,6.02,9.74,5.98,
+                   5.74,5.41,6.3,5.65,10.76,5.68,6.16,5.96,5.89,5.66)
+phob1 <-c(1.8,2.5,-3.5,-3.5,2.8,-0.4,-3.2,4.5,-3.9,3.8,1.9,
+                  -3.5,-1.6,-3.5,-4.5,-0.8,-0.7,4.2,-0.9,-1.3)
+phob2 <-c(1.6,2,-9.2,-8.2,3.7,1,-3,3.1,-8.8,2.8,3.4,-4.8,
+                  -0.2,-4.1,-12.3,0.6,1.2,2.6,1.9,-0.7)
+saaw       <-c(113,140,151,183,218,85,194,182,211,180,204,158,
+                 143,189,241,122,146,160,259,229)
+faal    <-c(0.74,0.91,0.62,0.62,0.88,0.72,0.78,0.88,0.52,
+                 0.85,0.85,0.63,0.64,0.62,0.64,0.66,0.7,0.86,0.85,0.76)
+polreq    <-c(7,4.8,13,12.5,5,7.9,8.4,4.9,10.1,4.9,5.3,10,
+                 6.6,8.6,9.1,7.5,6.6,5.6,5.2,5.4)
+freq        <-c(7.8,1.1,5.19,6.72,4.39,6.77,2.03,6.95,6.32,
+                10.15,2.28,4.37,4.26,3.45,5.23,6.46,5.12,7.01,1.09,3.3)
+charge.cat<-c('un','un','neg','neg','un','un','pos','un','pos',
+          'un','un','un','un','un','pos','un','un','un','un','un')
+phob.cat <-c('phob','phob','phyll','
+              phyll','phob','neut','neut','phob','phyll','phob','phob','phyll','neut',
+              'phyll','phyll','neut','neut',
+              'phob','phob','neut')
+vol.cat<-c('vsmall','small','small','med',
+              'vlarge','vsmall','med','large','large',
+              'large','large','small','small','med','large',
+           'vsmall','small','med','vlarge','vlarge')
+pol.cat<-c('nonpol','nonpol','pol','pol',
+                'nonpol','nonpol','pol','nonpol',
+                'pol','nonpol','nonpol','pol','nonpol','pol',
+                'pol','pol','pol','nonpol','nonpol','pol')
+chem.cat<-c('ali','sulfur','acid','acid','aro',
+            'ali','base','ali','base','ali','sulfur',
+            'amide','ali','amide','base','hydro','hydro',
+            'ali','aro','aro')
+
+aminoacids <- data.frame(aa,  MW,     vol,      rbulk,
+                         pol, IEP,    phob1,    phob2,
+                         saaw,faal,   polreq,   freq,
+                         charge.cat,  phob.cat, vol.cat,
+                         pol.cat,     chem.cat)
+```
+
+
+This dataset originates from [Higgs and Attwood (2005)](https://www.amazon.com/Bioinformatics-Molecular-Evolution-Higgs-Paul/dp/B008CMBFNO/ref=sr_1_1?dchild=1&keywords=higgs+attwood&qid=1607714235&sr=8-1), and was expanded in (Higgs (2009))[https://link.springer.com/article/10.1186/1745-6150-4-16].  I've added some additional categorical variables based on typical classifications used in textbooks.
+
+### Uses 
+
+Higgs and Attwood (2005) use these data to demonstrate several techniques:
+
+1. Principal components analysis (PCA)
+1. Distance metrics and distance matrices
+1. Clustering with UPGMA and k-means.
+1. Heatmaps
+
+The dataset and a related one are used by Higgs in several publications exploring the evolution of the structure of genetic code, e.g. [Higgs (2009)](https://link.springer.com/article/10.1186/1745-6150-4-16), [Higgs and Pudritz (2009)](https://www.liebertpub.com/doi/abs/10.1089/ast.2008.0280?casa_token=PeIS2HEnGxgAAAAA:GZEf7xzXjNNqMqsIwV2sgXGMdFlfesEIa9jtzs9RrSbW9F9ReOP5DBxNzRkqYyHD_Q_7s0duZOxs).
+
+I use the dataset for these purposes, as well as scatterplots, scatterplot matrices, correlations, correlation matrices, and 3D plots.
+
+### Getting to know the data
+
+This exert shows the basic structure of the data:
+
+```{r, echo = F}
+aminoacids[1:5,c(1:12)]
+```
+
+There is one row for each of the 20 amino acids, and each column is either a numeric or categorical variable describing its chemistry.  The categorical variables are all based on the numeric ones. 
+
+Each of the 20 amino acid has a 1-letter code 
+```{r}
+aminoacids[,1]
+```
+
+Several famous amino acids are sleep-related [tryptophan](https://en.wikipedia.org/wiki/Tryptophan), and leucine, isoleucine, and valine, the ["branched-chain amino acids"](https://en.wikipedia.org/wiki/Branched-chain_amino_acid) used in nutritional supplements.
+
+
+Several of the variables describes the size of the molecule and are highly correlated
+
+1. `MW` = [molecular weight](https://en.wikipedia.org/wiki/Molecular_mass)
+1. `vol` = volume (amount of space filled)
+1. `rbul`k = The bulkiness of the [**side chain** ("R")[(https://en.wikipedia.org/wiki/Amino_acid#Side_chains)], the part of each amino acid that makes it unique.
+1. `saaw` = Surface area accessible to water 
+
+```{r}
+cols <- c("MW","vol","rbulk","saaw")
+labs <- c("Molecular weight","Volume","Side-chain bulk","saaw")
+
+pairs(aminoacids[,cols],
+      labels = labs,upper.panel = NULL)
+mtext(text = "Size-related amino acid characteristics", side = 3, line = 2.5, cex = 1.1)
+```
+
+
+A major chemical characteristic of molecules is how they behave in water - their **hydrophobicity**.  Hydrophobicity is measured two ways in these data, and is correlated somewhat with a third variable **polar requirement**.
+
+1. `phob1` = hydrophobicity scale 1
+1. `phob2` = hydrophobicity scale 2
+1. `polreq` = polar rquirement scale 1
+1. `faal`
+
+An amino acids polar requirement is "a characteristic property ... defined by the paper chromatographic experiments of Woese and coworkers (Woese 1973; Woese et al. 1966a, b) in aqueous solutions of nucleobases."  [(Mathew and Luthey-Schulten 2008)](https://link.springer.com/article/10.1007%2Fs00239-008-9073-9).
+
+
+
+```{r}
+cols <- c("phob1","phob2","polreq","faal")
+labs <- c("Hydrophobicity - \nmeasure 1 ",
+          "Hydrophobicity - \nmeasure 2",
+          "Polar requirement","faal")
+
+pairs(aminoacids[,cols],
+      labels = labs,upper.panel = NULL)
+mtext(text = "Hydrophobicity, Polar Requirement, and FAAL", side = 3, line = 2.5, cex = 1.1)
+```
+
+
+The remaining two variables, polarity (pol) and isoelectric point (IEP) are poorly correlaed with the others.  At a molecule's [isoelectric point](https://en.wikipedia.org/wiki/Isoelectric_point#:~:text=The%20isoelectric%20point%20(pI%2C%20pH,However%2C%20pI%20is%20also%20used.), the pH is such that the molecules carries no net electrical charge. 
+
+In the plot below two other variables are included for comparison.
+
+```{r}
+cols <- c("pol","IEP","MW","phob1")
+labs <- c("Polarity","Isoelectric\npoint","(MW)","(Hydrophobicity)")
+
+pairs(aminoacids[,cols],
+      labels = labs,upper.panel = NULL)
+mtext(text = "Polarity & isoelectric point", side = 3, line = 2.5, cex = 1.1)
+```
+
+
+ 
+
+
+
+```{r, echo = F}
+# # col name  meaning              units     notes
+# "MW",       "molecular weight", "Daltons", 
+# "vol",      "volume",            "",      "from van der Waals radii",
+# "rbulk",    "R-bulkiness",       "",      "measure of the shape of the side chain (R)"
+# "pol",      "polarity",          "",      "measure of the electric field strength around the molecule"
+# "IEP",      "isolectric point", "",      "",
+# "phob1",    "",                  "",      "",
+# "phob2",    "",                  "",      "",
+# "saaw",     "",                  "",     "Surface area accessible to water in an unfolded peptide"
+# "faal",     "",                  "",     "Fraction of accessible area lost when a protein folds"
+# "polreq",   "polar requirement", "",     "",
+# "freq","Frequency","The frequencies column shows the mean percentage of each amino acid in the protein sequences 
+# of modern organisms."
+# 
+# "charge.cat","Electric charge.cat (categorical)"
+# "vol.cat","volume"
+# "phob.cat","Hydrophobicity"
+# "chem.cat","Chemistry"
+```
+
+
+
+```{r, echo = F}
+# 1 letter code
+aa        <-c('A','C','D','E','F','G','H','I','K','L','M','N',
+              'P','Q','R','S','T','V','W','Y')
+
+## molecular weight in dalton
+MW     <-c(89,121,133,146,165,75,155,131,146,131,149,
+             132,115,147,174,105,119,117,204,181)
+
+## volume (from van der Waals radii)
+vol    <-c(67,86,91,109,135,48,118,124,135,124,124,96,90,
+              114,148,73,93,105,163,141)
+
+##  rbulk – a measure of the shape of the side chain
+rbulk <-c(11.5,13.46,11.68,13.57,19.8,3.4,13.69,21.4,
+              15.71,21.4,16.25,12.28,17.43,
+              14.45,14.28,9.47,15.77,21.57,21.67,18.03)
+
+## pol – a measure of the electric field strength around the molecule
+pol  <-c(0,1.48,49.7,49.9,0.35,0,51.6,0.13,49.5,0.13,
+              1.43,3.38,1.58,3.53,52,1.67,1.66,0.13,2.1,1.61)
+
+## IEPric point
+IEP <-c(6,5.07,2.77,3.22,5.48,5.97,7.59,6.02,9.74,5.98,
+                   5.74,5.41,6.3,5.65,10.76,5.68,6.16,5.96,5.89,5.66)
+
+## 1st phobity scale
+phob1 <-c(1.8,2.5,-3.5,-3.5,2.8,-0.4,-3.2,4.5,-3.9,3.8,1.9,
+                  -3.5,-1.6,-3.5,-4.5,-0.8,-0.7,4.2,-0.9,-1.3)
+
+## 2nd phobity scale
+phob2 <-c(1.6,2,-9.2,-8.2,3.7,1,-3,3.1,-8.8,2.8,3.4,-4.8,
+                  -0.2,-4.1,-12.3,0.6,1.2,2.6,1.9,-0.7)
+
+## Surface area accessible to water in an unfolded peptide
+saaw       <-c(113,140,151,183,218,85,194,182,211,180,204,158,
+                 143,189,241,122,146,160,259,229)
+
+
+## Fraction of accessible area lost when a protein folds
+faal    <-c(0.74,0.91,0.62,0.62,0.88,0.72,0.78,0.88,0.52,
+                 0.85,0.85,0.63,0.64,0.62,0.64,0.66,0.7,0.86,0.85,0.76)
+
+
+
+# polar requirement 
+polreq    <-c(7,4.8,13,12.5,5,7.9,8.4,4.9,10.1,4.9,5.3,10,
+                 6.6,8.6,9.1,7.5,6.6,5.6,5.2,5.4)
+
+## Relative frequency of occurance
+## "The frequencies column shows the mean 
+### percentage of each amino acid in the protein sequences 
+### of modern organisms"
+freq        <-c(7.8,1.1,5.19,6.72,4.39,6.77,2.03,6.95,6.32,
+                10.15,2.28,4.37,4.26,3.45,5.23,6.46,5.12,7.01,1.09,3.3)
+
+##
+# charge.cats
+## un = Un-charge.catd
+## neg = negative
+## pos = positive
+charge.cat<-c('un','un','neg','neg','un','un','pos','un','pos',
+          'un','un','un','un','un','pos','un','un','un','un','un')
+
+## phob.cat
+phob.cat<-c('phob','phob','phyll','
+              phyll','phob','neut','neut',
+              'phob','phyll','phob','phob',
+              'phyll','neut',
+              'phyll','phyll','neut','neut',
+              'phob','phob','neut')
+
+## volume
+vol.cat<-c('vsmall','small','small','med',
+              'vlarge','vsmall','med','large','large',
+              'large','large','small','small','med','large',
+              'vsmall',
+              'small','med','vlarge','vlarge')
+
+## pol
+pol.cat<-c('nonpol','nonpol','pol','pol',
+                'nonpol','nonpol','pol','nonpol',
+                'pol','nonpol','nonpol','pol','nonpol','pol',
+                'pol','pol','pol','nonpol','nonpol','pol')
+
+## chem.cat
+# aliphathic
+chem.cat<-c('ali','sulfur','acid','acid','aro',
+            'ali','base','ali','base','ali','sulfur',
+            'amide','ali','amide','base','hydro','hydro',
+            'ali','aro','aro')
+
+
+
+
+```
+
+
+
+```{r, echo = F}
+#Build the dataframes.
+### Build dataframe
+aminoacids <- data.frame(aa, 
+                     MW,vol,
+                     rbulk, pol, 
+                     IEP,phob1, phob2,
+                     saaw, faal, polreq,
+                     freq, charge.cat, phob.cat,
+                     vol.cat, pol.cat, chem.cat)
+```
+
+```{r, eval = F}
+#par(mfrow = c(1,1))
+plot(polreq  ~ freq, data = aminoacids,
+     xlab = "label here",
+     ylab = "label here",
+     main = "title here",
+     col = 0)
+
+
+text(polreq ~ freq, 
+     labels = aa, 
+     data = aminoacids, 
+     col = 1:20)
+```
+
+
