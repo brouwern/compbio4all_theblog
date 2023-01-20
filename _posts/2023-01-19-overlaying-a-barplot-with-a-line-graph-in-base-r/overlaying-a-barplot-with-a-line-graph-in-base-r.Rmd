@@ -15,19 +15,16 @@ categories:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r,echo = F, fig.cap= "Foley & Faust (2010), Fig. 4"}
 knitr::include_graphics("foleyfaulst.gif")
 ```
 
-https://r-graph-gallery.com/145-two-different-y-axis-on-the-same-plot.html
+A relatively common type of plot in wildlife ecology is a dual-axis graph representing some aspect of a population using one axis, like birth rate, and the second representing an aspect of the environment.
 
-
-A relatively type of plot in wildlife ecology is a dual-axis graph representing some aspect of a population using one axis, like birth rate, and the second representing an aspect of the environment.
-
-There are arrangements for why dual-axis plots are a [poor choice for data viz](https://blog.datawrapper.de/dualaxis/), but I wanted to be able to show my students how to make them.  I'll use base R and `lattice` graphics in this post and perhaps try `ggplot2` in the future.
+There are arguements for why such **dual-axis** plots are a [poor choice for data viz](https://blog.datawrapper.de/dualaxis/), but I wanted to be able to show my students how to make them.  I'll use base R and `lattice` graphics in this post to demonstrate how to do this and perhaps try `ggplot2` in the future.
 
 
 The example shown above is from a paper on African elephants by [Foley and Faust 2010](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF). Called "Rapid population growth in an elephant *Loxodonta africana* population recovering from poaching in Tarangire National Park, Tanzania", in the animal conservation journal Oryx.
@@ -39,6 +36,7 @@ I extracted the data from Figure 4 of Foley and Faust (2010) using [`metaDigitis
 The dataset is small and reproduced below:
 
 ```{r}
+
 month.i   <- c( 1,  2, 3, 4, 5, 6, 7, 8, 9,10,11, 12)
 month.num <- c(11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 19)
 month.name <- c("Nov",  "Dec", "Jan", "Feb",
@@ -46,6 +44,7 @@ month.name <- c("Nov",  "Dec", "Jan", "Feb",
                  "July", "Aug", "Sep", "Oct")
 conceptions <- c(10, 42,34,18, 30, 55,68, 48,24,23,11,8)
 rainfall    <- c(60,100,95,78,130,160,58,  4, 3, 3, 2,18)
+
 ```
 
 
@@ -70,15 +69,23 @@ axis(side = 1, at=1:12, labels=month.name)
 ```
 #### A dual axis graph
 
-A dual-axis plot can be made using `lattice` graphics.  I'll make two separate plots, one barplot using `lattice::barplot()`, one line plot using `lattice::xyplot`, then overlay them.
+A dual-axis plot can be made using `lattice` graphics.  The code below was adapted from [The R Graph Gallary: Dual Y axis in R](https://r-graph-gallery.com/145-two-different-y-axis-on-the-same-plot.html
+).  
+
+Thie requires making make two separate plots
+
+* A barplot using `lattice::barplot()`
+* A line plot using `lattice::xyplot`, then overlay them.
 
 
 First, I need `lattice` and `latticeExtra`.
+
 ```{r}
 library(latticeExtra)
 ```
 
-I'l bundel the data into a dataframe for convience
+I'll bundle the data into a dataframe for convenience:
+
 ```{r}
 df <- data.frame(month.i, 
                  month.name, 
@@ -102,10 +109,13 @@ conceptions <- barchart(conceptions ~ month.i,
 ```
 
 This looks nice enough:
+
 ```{r}
 conceptions
 ```
+
 Now the rainfall data using `xyplot`.
+
 ```{r}
 rainfall <- xyplot(rainfall ~ month.i, df, type = "b", lwd=3, cex = 2, pch = 18, 
                ylab = "Rainfall (mm; blude triangles)",
@@ -126,4 +136,4 @@ doubleYScale(conceptions, rainfall,
 
 #### References
 
-Foley and Faust 2010](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF). Called Rapid population growth in an elephant *Loxodonta africana* population recovering from poaching in Tarangire National Park, Tanzania.  Oryx 44:205 - 212.  https://doi.org/10.1017/S0030605309990706
+[Foley and Faust 2010](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF). Called Rapid population growth in an elephant *Loxodonta africana* population recovering from poaching in Tarangire National Park, Tanzania.  Oryx 44:205 - 212.  https://doi.org/10.1017/S0030605309990706

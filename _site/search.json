@@ -6,7 +6,7 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\nWelcome to Computational Biology for All! I'm Nathan Brouwer, a data scientist and biology lecturer at the University of Pittsburgh Department of Biological Science. I've been using R for over a decade to do and teach statistical modeling, population simulations, bioinformatics and phylogenetics.\n\n\n\n\n",
-      "last_modified": "2023-01-19T19:22:17-05:00"
+      "last_modified": "2023-01-19T21:09:17-05:00"
     },
     {
       "path": "blogroll.html",
@@ -14,14 +14,14 @@
       "description": "Blogroll",
       "author": [],
       "contents": "\nR-bloggers: https://www.r-bloggers.com/\nStatistical Modeling, Causal Inference, and Social Science (Andrew Gelman et al.): https://statmodeling.stat.columbia.edu/\nArmchair Ecology: https://armchairecology.blog/\n\n\n\n",
-      "last_modified": "2023-01-19T19:22:18-05:00"
+      "last_modified": "2023-01-19T21:09:18-05:00"
     },
     {
       "path": "index.html",
       "title": "Computational Biology for All!",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2023-01-19T19:22:19-05:00"
+      "last_modified": "2023-01-19T21:09:19-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
