@@ -23,17 +23,19 @@ knitr::include_graphics("asciiworld.png")
 ```
 
 
-Welcome to **Computational Biology for All**.  This blog is dedicated to introducing and explaining quantitative methods to biologists.  Topics will include:
+Welcome to **Computational Biology for All**.  This blog is dedicated to introducing and explaining quantitative methods to biologists.  
 
+Topics will include:
+
+* data science
+* statistical analysis
+* data visualization
 * computational biology
 * bioinformatics
 * phylogenetics
-* data science
-* statistical analysis
 * simulation
-* data visualization
 
 
-To kick off the blog I am going to do a series outlining how to carryout a common task in molecular biology, bioinformatics, and evolutionary biology: building a [multiple sequence alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment) and [phylogenetic tree](https://en.wikipedia.org/wiki/Phylogenetic_tree) using protein sequences obtained from the National Institutes of Health's databases. 
+<!-- To kick off the blog I am going to do a series outlining how to carryout a common task in molecular biology, bioinformatics, and evolutionary biology: building a [multiple sequence alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment) and [phylogenetic tree](https://en.wikipedia.org/wiki/Phylogenetic_tree) using protein sequences obtained from the National Institutes of Health's databases.  -->
 
 

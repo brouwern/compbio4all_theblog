@@ -118,7 +118,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["asciiworld.png","welcome-to-computational-biology-for-all_files/anchor-4.2.2/anchor.min.js","welcome-to-computational-biology-for-all_files/bowser-1.9.3/bowser.min.js","welcome-to-computational-biology-for-all_files/distill-2.2.21/template.v2.js","welcome-to-computational-biology-for-all_files/header-attrs-2.14/header-attrs.js","welcome-to-computational-biology-for-all_files/jquery-3.6.0/jquery-3.6.0.js","welcome-to-computational-biology-for-all_files/jquery-3.6.0/jquery-3.6.0.min.js","welcome-to-computational-biology-for-all_files/jquery-3.6.0/jquery-3.6.0.min.map","welcome-to-computational-biology-for-all_files/popper-2.6.0/popper.min.js","welcome-to-computational-biology-for-all_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome-to-computational-biology-for-all_files/tippy-6.2.7/tippy-light-border.css","welcome-to-computational-biology-for-all_files/tippy-6.2.7/tippy.css","welcome-to-computational-biology-for-all_files/tippy-6.2.7/tippy.umd.min.js","welcome-to-computational-biology-for-all_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["asciiworld.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -189,6 +189,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1261,15 +1262,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1468,7 +1475,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="welcome-to-computational-biology-for-all_files/header-attrs-2.14/header-attrs.js"></script>
+  <script src="welcome-to-computational-biology-for-all_files/header-attrs-2.18/header-attrs.js"></script>
   <script src="welcome-to-computational-biology-for-all_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="welcome-to-computational-biology-for-all_files/popper-2.6.0/popper.min.js"></script>
   <link href="welcome-to-computational-biology-for-all_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1506,11 +1513,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-byline">
-  Nathan L. Brouwer <a
-href="https://www.linkedin.com/in/nathan-brouwer-phd-97100980/"
-class="uri">https://www.linkedin.com/in/nathan-brouwer-phd-97100980/</a> (University
-of Pittsburgh)<a href="https://www.biology.pitt.edu/"
-class="uri">https://www.biology.pitt.edu/</a>
+  Nathan L. Brouwer <a href="https://www.linkedin.com/in/nathan-brouwer-phd-97100980/" class="uri">https://www.linkedin.com/in/nathan-brouwer-phd-97100980/</a> (University of Pittsburgh)<a href="https://www.biology.pitt.edu/" class="uri">https://www.biology.pitt.edu/</a>
   
 <br/>05-05-2022
 </div>
@@ -1519,28 +1522,19 @@ class="uri">https://www.biology.pitt.edu/</a>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="asciiworld.png" width="322" /></p>
 </div>
-<p>Welcome to <strong>Computational Biology for All</strong>. This blog
-is dedicated to introducing and explaining quantitative methods to
-biologists. Topics will include:</p>
+<p>Welcome to <strong>Computational Biology for All</strong>. This blog is dedicated to introducing and explaining quantitative methods to biologists.</p>
+<p>Topics will include:</p>
 <ul>
+<li>data science</li>
+<li>statistical analysis</li>
+<li>data visualization</li>
 <li>computational biology</li>
 <li>bioinformatics</li>
 <li>phylogenetics</li>
-<li>data science</li>
-<li>statistical analysis</li>
 <li>simulation</li>
-<li>data visualization</li>
 </ul>
-<p>To kick off the blog I am going to do a series outlining how to
-carryout a common task in molecular biology, bioinformatics, and
-evolutionary biology: building a <a
-href="https://en.wikipedia.org/wiki/Multiple_sequence_alignment">multiple
-sequence alignment</a> and <a
-href="https://en.wikipedia.org/wiki/Phylogenetic_tree">phylogenetic
-tree</a> using protein sequences obtained from the National Institutes
-of Health’s databases.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!-- To kick off the blog I am going to do a series outlining how to carryout a common task in molecular biology, bioinformatics, and evolutionary biology: building a [multiple sequence alignment](https://en.wikipedia.org/wiki/Multiple_sequence_alignment) and [phylogenetic tree](https://en.wikipedia.org/wiki/Phylogenetic_tree) using protein sequences obtained from the National Institutes of Health's databases.  -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

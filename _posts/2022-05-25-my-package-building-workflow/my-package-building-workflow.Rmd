@@ -9,6 +9,7 @@ output:
     self_contained: false
 editor_options: 
   chunk_output_type: console
+draft: true
 ---
 
 
@@ -221,7 +222,7 @@ Create folder for external data.
 
 R packages often have a folder called `/inst` which stands for "installed."  This folder is usually for miscellaneous files associated with the package.  This includes external data (`/extdata`) such as `.csv` files.
 
-```{r}
+```{r, eval = F}
 usethis::use_directory("/inst")
 usethis::use_directory("/inst/extdata")
 ```

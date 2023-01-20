@@ -7,7 +7,11 @@ date: 2022-05-23
 output:
   distill::distill_article:
     self_contained: false
+draft: true
 ---
+
+
+
 
 
 ```{r setup, include=FALSE}
@@ -64,9 +68,21 @@ Solo:
 
 ### Density dependent population growth
 
+### Differential equation dN/dT
+
+\[\frac{dN}{dT} = bN - dN = (b - d)N \nonumber\]
+
+\[\frac{dN}{dT} = rN \nonumber\]
+
 ## E
 
+### Exponents 
+
+\(N_t=N_0e^{rt}\)
+
 ### Exponential growth
+
+\(N_t=N_0e^{rt}\)
 
 ## F
 
@@ -191,6 +207,8 @@ Solo:
 
 ### Logistic growth
 
+\[\frac{dN}{dT} = r_{max}\frac{dN}{dT} =r_{max}*N*\frac{K - N}{K} \nonumber\]
+
 ## M
 
 ### Matrix model
@@ -206,3 +224,11 @@ Solo:
 7 & 8 & 9
 \end{bmatrix}\]
 
+
+## Subscripts
+
+\(n_x\)
+
+\(N_x\)
+
+\(N_{t_{double}}\)

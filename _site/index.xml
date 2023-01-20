@@ -7,49 +7,7 @@
     <description>Computational Biology for All!  A blog for those learning &amp; teaching computational biology &amp; bioinformatics.
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 25 May 2022 00:00:00 +0000</lastBuildDate>
-    <item>
-      <title>My package-building workflow</title>
-      <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-25-my-package-building-workflow</link>
-      <description>How I build packages</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-25-my-package-building-workflow</guid>
-      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>My package-maintenance workflow</title>
-      <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-25-my-package-maintenance-workflow</link>
-      <description>The key functions used to maintain a package.</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-25-my-package-maintenance-workflow</guid>
-      <pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Key parts of my distill blog workflow</title>
-      <dc:creator>Nathan L,Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-24-key-parts-of-my-distill-blog-workflow</link>
-      <description>Or, "the stuff I always forget".</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-24-key-parts-of-my-distill-blog-workflow</guid>
-      <pubDate>Tue, 24 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://compbio4all.netlify.app/posts/2022-05-24-key-parts-of-my-distill-blog-workflow/Aurora_consurgens_zurich_044_f-21v-44_dragon-pot.jpeg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Forget irises, Hello Amino Acids!</title>
-      <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-23-forget-irises-hello-amino-acids</link>
-      <description>A biologist-friendly dataset for multivariate data exploration.</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-23-forget-irises-hello-amino-acids</guid>
-      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://compbio4all.netlify.app/posts/2022-05-23-forget-irises-hello-amino-acids/Joseph_Wright_of_Derby_The_Alchemist-CROPPED.jpeg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Latex equations for biologists from A to Z</title>
-      <dc:creator>Nathan L. Brouwer</dc:creator>
-      <link>https://compbio4all.netlify.app/posts/2022-05-23-latex-equations-for-biologists-from-a-to-z</link>
-      <description>From "density dependent growth" to "matrix population model".</description>
-      <guid>https://compbio4all.netlify.app/posts/2022-05-23-latex-equations-for-biologists-from-a-to-z</guid>
-      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
-    </item>
+    <lastBuildDate>Thu, 05 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Welcome to Computational Biology for All!</title>
       <dc:creator>Nathan L. Brouwer</dc:creator>

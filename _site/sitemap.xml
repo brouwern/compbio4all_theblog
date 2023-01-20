@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://compbio4all.netlify.app/about.html</loc>
-    <lastmod>2022-05-11T10:21:39-04:00</lastmod>
+    <lastmod>2023-01-19T15:59:07-05:00</lastmod>
   </url>
   <url>
     <loc>https://compbio4all.netlify.app/blogroll.html</loc>
@@ -13,27 +13,7 @@
     <lastmod>2022-05-05T14:16:56-04:00</lastmod>
   </url>
   <url>
-    <loc>https://compbio4all.netlify.app/posts/2022-05-25-my-package-building-workflow/</loc>
-    <lastmod>2022-05-25T11:08:43-04:00</lastmod>
-  </url>
-  <url>
-    <loc>https://compbio4all.netlify.app/posts/2022-05-25-my-package-maintenance-workflow/</loc>
-    <lastmod>2022-05-25T11:06:30-04:00</lastmod>
-  </url>
-  <url>
-    <loc>https://compbio4all.netlify.app/posts/2022-05-24-key-parts-of-my-distill-blog-workflow/</loc>
-    <lastmod>2022-05-25T11:07:53-04:00</lastmod>
-  </url>
-  <url>
-    <loc>https://compbio4all.netlify.app/posts/2022-05-23-forget-irises-hello-amino-acids/</loc>
-    <lastmod>2022-05-24T16:55:40-04:00</lastmod>
-  </url>
-  <url>
-    <loc>https://compbio4all.netlify.app/posts/2022-05-23-latex-equations-for-biologists-from-a-to-z/</loc>
-    <lastmod>2022-05-23T22:40:25-04:00</lastmod>
-  </url>
-  <url>
     <loc>https://compbio4all.netlify.app/posts/2022-05-05-welcome-to-computational-biology-for-all/</loc>
-    <lastmod>2022-05-25T11:12:57-04:00</lastmod>
+    <lastmod>2023-01-19T16:27:35-05:00</lastmod>
   </url>
 </urlset>
