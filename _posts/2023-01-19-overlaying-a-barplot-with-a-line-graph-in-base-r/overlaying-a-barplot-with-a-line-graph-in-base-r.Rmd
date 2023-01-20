@@ -7,7 +7,7 @@ date: 2023-01-19
 output:
   distill::distill_article:
     self_contained: false
-draft: true
+draft: false
 categories:
   - base R
   - dataviz
