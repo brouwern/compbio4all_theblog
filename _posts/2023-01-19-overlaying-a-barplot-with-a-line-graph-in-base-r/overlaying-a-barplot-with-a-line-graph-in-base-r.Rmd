@@ -11,6 +11,8 @@ draft: false
 categories:
   - base R
   - dataviz
+  - lattice
+  - ecology
 ---
 
 
@@ -18,20 +20,21 @@ categories:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r,echo = F, fig.cap= "Foley & Faust (2010), Fig. 4"}
-knitr::include_graphics("foleyfaulst.gif")
+```{r,echo = F}
+#fig.cap= "Foley & Faust (2010), Fig. 4"
+knitr::include_graphics("foleyfaulst.png")
 ```
 
-A relatively common type of plot in wildlife ecology is a dual-axis graph representing some aspect of a population using one axis, like birth rate, and the second representing an aspect of the environment.
+A relatively common type of plot in wildlife ecology is a dual-axis graph representing some aspect of a population like birth rate using one axis, and the second axis representing an aspect of the environment.
 
 There are arguements for why such **dual-axis** plots are a [poor choice for data viz](https://blog.datawrapper.de/dualaxis/), but I wanted to be able to show my students how to make them.  I'll use base R and `lattice` graphics in this post to demonstrate how to do this and perhaps try `ggplot2` in the future.
 
 
-The example shown above is from a paper on African elephants by [Foley and Faust 2010](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF). Called "Rapid population growth in an elephant *Loxodonta africana* population recovering from poaching in Tarangire National Park, Tanzania", in the animal conservation journal Oryx.
+The example shown above is from a paper on African elephants by [Foley and Faust 2010](https://www.cambridge.org/core/journals/oryx/article/rapid-population-growth-in-an-elephant-loxodonta-africana-population-recovering-from-poaching-in-tarangire-national-park-tanzania/2DADFFCB562E9553B1DF7688EB372FBF) called "Rapid population growth in an elephant *Loxodonta africana* population recovering from poaching in Tarangire National Park, Tanzania", in the animal conservation journal Oryx.
 
 The left axis shows the estimated number of conceptions in the population (determined by back-calculating from date of birth) and the right axis shows rainfall.  It appears that elephant conception (and subsequent birth) is timed with the rains.
 
-I extracted the data from Figure 4 of Foley and Faust (2010) using [`metaDigitise`](https://cran.r-project.org/web/packages/metaDigitise/vignettes/metaDigitise.html.
+I extracted the data from Figure 4 of Foley and Faust (2010) using [`metaDigitise`](https://cran.r-project.org/web/packages/metaDigitise/vignettes/metaDigitise.html).
 
 The dataset is small and reproduced below:
 
@@ -54,13 +57,21 @@ The easiest way to display the data is in two side-by-side figures.  I'll use th
 
 
 ```{r}
+# set par() for side by side plots 
+## and mar() for narrow margins
 par(mfrow = c(1,2), mar = c(4,4,1,2))
+
+# left-hand plot
+## the plot
 plot(conceptions ~ month.i, type = "b", xlab = "", 
      ylab = "", xaxt="n", pch = 16, cex = 1.25)
+
+## margin-text
 mtext(text = "Month", side = 1, line = 2.25, cex = 1.2)
 mtext(text = "Conceptions", side = 2, line = 2, cex = 1.2)
 axis(side = 1, at=1:12, labels=month.name)
 
+# right-hand plot
 plot(rainfall ~ month.i, type = "b", xlab = "", ylab = "", 
      xaxt="n", pch = 18, cex = 1.25)
 mtext(text = "Month", side = 1, line = 2, cex = 1.2)
@@ -69,18 +80,21 @@ axis(side = 1, at=1:12, labels=month.name)
 ```
 #### A dual axis graph
 
-A dual-axis plot can be made using `lattice` graphics.  The code below was adapted from [The R Graph Gallary: Dual Y axis in R](https://r-graph-gallery.com/145-two-different-y-axis-on-the-same-plot.html
-).  
+A dual-axis plot can be made using [`lattice` graphics[(https://www.statmethods.net/advgraphs/trellis.html).  The code below was adapted from [The R Graph Gallery: Dual Y axis in R](https://r-graph-gallery.com/145-two-different-y-axis-on-the-same-plot.html
+), which was a dual-axis example with just line graphs.
 
-Thie requires making make two separate plots
+A dual axis plot with `lattic` requires making make two separate plots:
 
 * A barplot using `lattice::barplot()`
-* A line plot using `lattice::xyplot`, then overlay them.
+* A line plot using `lattice::xyplot`
+
+The two plots then get overlaid.
 
 
 First, I need `lattice` and `latticeExtra`.
 
 ```{r}
+library(lattice)
 library(latticeExtra)
 ```
 
@@ -94,21 +108,21 @@ df <- data.frame(month.i,
 
 ```
 
-Now first, a barplot for the conceptions, stored in an object.
+Now first, a barplot for the conceptions, stored in an object:
 
 ```{r}
 conceptions <- barchart(conceptions ~ month.i, 
                  data = df, 
                  type = "l" , 
-                horizontal = F,
+                 horizontal = F,
                  lwd=2, col="darkgrey", 
-                ylab = "Conceptions (grey bars)", 
-                xlab = "Month", 
-                main = "Elephant conceptions vs. rainfall, Tarangire NP Tanzania")
+                 ylab = "Conceptions (grey bars)", 
+                 xlab = "Month", 
+                 main = "Elephant conceptions vs. rainfall, Tarangire NP Tanzania")
 
 ```
 
-This looks nice enough:
+This looks nice enough when I call up the object holding the plot:
 
 ```{r}
 conceptions
@@ -117,22 +131,26 @@ conceptions
 Now the rainfall data using `xyplot`.
 
 ```{r}
-rainfall <- xyplot(rainfall ~ month.i, df, type = "b", lwd=3, cex = 2, pch = 18, 
-               ylab = "Rainfall (mm; blude triangles)",
-               xlab = "Conceptions")
+rainfall <- xyplot(rainfall ~ month.i, 
+                   data = df, type = "b", lwd=3, 
+                   cex = 2, pch = 18, 
+                   ylab = "Rainfall (mm; blue triangles)",
+                   xlab = "Conceptions")
 ```
 
 
 The plots are overlaid with dual axes using `latticeExtra::doubleYScale`
 
 ```{r}
-doubleYScale(conceptions, rainfall, 
+doubleYScale(conceptions,  # the bar graph
+             rainfall,     # the line graph
              add.ylab2 = TRUE,
-             use.style=FALSE ,xlab = "")
+             use.style = FALSE, 
+             xlab = "")
 
 ```
 
-
+There are drawback to dual-axis plots, but this does show the correlation between the demographic process of conception and the environmental process of rainfall.  Further explorations could be done using lagged correlations.  Due to the actual duration of gestation in elephants ([22 months](https://royalsocietypublishing.org/doi/full/10.1098/rstb.2006.1831)) there is hypothesized to be a lag between the two variables so that birth coincides with better rainfall and therefore environmental and foraging conditions.
 
 #### References
 

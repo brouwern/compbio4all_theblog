@@ -15,9 +15,11 @@
       <description>Creating a dual-axis, dual-element graph.</description>
       <category>base R</category>
       <category>dataviz</category>
+      <category>lattice</category>
+      <category>ecology</category>
       <guid>https://compbio4all.netlify.app/posts/2023-01-19-overlaying-a-barplot-with-a-line-graph-in-base-r</guid>
       <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      <media:content url="https://compbio4all.netlify.app/posts/2023-01-19-overlaying-a-barplot-with-a-line-graph-in-base-r/overlaying-a-barplot-with-a-line-graph-in-base-r_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+      <media:content url="https://compbio4all.netlify.app/posts/2023-01-19-overlaying-a-barplot-with-a-line-graph-in-base-r/foleyfaulst.png" medium="image" type="image/png" width="1298" height="796"/>
     </item>
     <item>
       <title>Welcome to Computational Biology for All!</title>
